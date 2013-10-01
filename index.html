@@ -7,21 +7,29 @@
     <link href="css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <script type="text/x-handlebars" data-template-name="home">
     <div class="container">
       <div class="header">
+        <!--<script type="text/x-handlebars" data-template-name="nav">
         <ul class="nav nav-pills pull-right">
             {{#each}}
             <li {{bind-attr class="active:active"}}><a href="/Home">{{title}}</a></li>
             {{/each}}
           <li><a href="mailto:contact@nathanjervis.com">Contact</a></li>
         </ul>
+        </script>-->
         <h3 class="text-muted">Nathan Jervis</h3>
       </div>
         <section id="main">
             <h2>Home</h2>
 
       <div class="jumbotron">
+        <script type="text/x-handlebars" data-template-name="page">
+          {{#each}}
+            {{#blog-post title=title}}
+              {{body}}
+            {{/blog-post}}
+          {{/each}}
+        </script>
         <h1>Nathan Jervis</h1>
           <img src="http://www.gravatar.com/avatar/378a3ad4bed0e6a5d9fd71be8d2cad8c?s=128" />
         <p class="lead">Software Developer. <br />Experienced, Educated Programmer.<br />Clean, Reliable Code.</p>
@@ -57,7 +65,14 @@
         <p>&copy; Nathan Jervis 2013</p>
       </div>
     </div>
-    </script>
+    
+    <script type="text/x-handlebars" data-template-name="components/blog-post">
+      <article class="blog-post">
+        <h1>{{title}}</h1>
+        <p>{{content}}</p>
+        <p>Edit title: {{input type="text" value=title}}</p>
+      </article>
+  </script>
     
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/handlebars-1.0.0.js"></script>
