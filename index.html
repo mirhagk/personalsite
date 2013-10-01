@@ -5,23 +5,7 @@
 <title>Ember Starter Kit</title>
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <!--<link rel="stylesheet" href="css/style.css">-->
-  <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">-->
-  <style>
-    .jumbotron
-    {
-        /*margin-top:50px;*/
-        text-align:center;
-    }
-    .header
-    {
-        margin-bottom: 50px;
-    }
-    .intro
-    {
-        font-style: italic;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -39,15 +23,6 @@
         </ul>
         <h3 class="text-muted"><a href="#">Nathan Jervis</a></h3>
         </div>
-    <!--<div class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="#">Nathan Jervis</a>
-        <ul class="nav">
-          <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
-          <li>{{#link-to 'about'}}About{{/link-to}}</li>
-        </ul>
-      </div>
-    </div>-->
         <section id="main">
         {{outlet}}
     </section>
@@ -93,13 +68,13 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <table class='table'>
+          <table class='table posts'>
             <thead>
               <tr><th>Recent Posts</th></tr>
             </thead>
             {{#each model}}
             <tr><td>
-                {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author.name}}</small>{{/link-to}}
+                {{#link-to 'post' this}}{{title}} <span class='details'><span class="text-muted">by {{author.name}}</span> <em>{{excerpt}}</em></span>{{/link-to}}
             </td></tr>
             {{/each}}
           </table>

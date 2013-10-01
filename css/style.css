@@ -1,4 +1,16 @@
-/* Put your CSS here */
-html, body {
-    margin: 20px;
+.jumbotron
+{
+	text-align:center;
+}
+.header
+{
+	margin-bottom: 50px;
+}
+.intro
+{
+	font-style: italic;
+}
+.posts .details
+{
+	font-size: 11px;
 }
