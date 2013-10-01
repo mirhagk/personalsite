@@ -1,4 +1,5 @@
 // Model
+window.App = Ember.Application.create();
 
 App.Mailbox = Em.Object.extend();
 
