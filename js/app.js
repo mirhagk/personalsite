@@ -1,5 +1,12 @@
 App = Ember.Application.create({});
 
+var experience = [{
+    name: 'Population Health Research Institute',
+    location: 'Hamilton, ON',
+    title: 'Software Developer',
+    tech: [{name: 'C#'},{name: 'ExtJS'}]
+}];
+
 var posts = [{
   id: 'hello_world',
   title: "Hello World",
@@ -24,6 +31,12 @@ App.Router.map(function() {
   this.resource('posts', function() {
     this.resource('post', { path: ':post_id' });
   });
+});
+
+App.ExperienceRoute = Ember.Route.extend({
+    model: function(){
+        return experience;
+    }
 });
 
 App.PostsRoute = Ember.Route.extend({

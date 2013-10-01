@@ -150,9 +150,17 @@
     </div>
   </script>
   <script type="text/x-handlebars" id="experience">
-    <div class='about'>
-      <p>Nathan Jervis is the most awesome person on the planet, and this is no exaggeration</p>
-    </div>
+    {{#each model}}
+        <h2>{{name}}</h2>
+        <p><em>{{location}}</em></p>
+        <p><strong>{{title}}</strong></p>
+        <h3>Technologies Used:</h3>
+        <ul>
+        {{#each tech}}
+            <li>{{name}}</li>
+        {{/each}}
+        </ul>
+    {{/each}}
   </script>
   <script type="text/x-handlebars" id="education">
     <div class='about'>
