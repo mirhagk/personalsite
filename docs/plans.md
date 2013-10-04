@@ -9,6 +9,8 @@ Resume generation plans
 
 + Several resume formats/templates to choose from as well. Resume format uses handlebar syntax similar to emberjs in order to generate the file (`{{item.data}}` `{{#each}}` etc)
 
++ Combine technologies section, or expand
+
 
 Customize Deployment
 --------------------
