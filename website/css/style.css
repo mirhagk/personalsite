@@ -14,3 +14,11 @@
 {
 	font-size: 11px;
 }
+.footer
+{
+    margin-top: 15px;
+}
+.footer hr
+{
+    margin-bottom: 0px;
+}
