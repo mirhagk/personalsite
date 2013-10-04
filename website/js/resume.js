@@ -7,7 +7,7 @@ var experience = [{
     tech: [
         {name: 'C#'},
         {name: 'ExtJS'},
-        {name: 'LINQ\SQL'},
+        {name: 'LINQ/SQL'},
         {name: 'ASP.NET'},
         {name: 'TFS'},
         {name: 'RDL/RDLC'}
