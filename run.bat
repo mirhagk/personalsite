@@ -1,2 +1,2 @@
-http-server
+http-server website
 pause
