@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Ember Starter Kit</title>
+<title>Nathan Jervis</title>
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="css/style.css">
@@ -135,6 +135,14 @@
             <li>{{name}}</li>
         {{/each}}
         </ul>
+        <h3>Responsibilities</h3>
+        {{#each respon}}
+            <li>{{text}}</li>
+        {{/each}}
+        <h3>Achievements</h3>
+        {{#each achiev}}
+            <li>{{text}}</li>
+        {{/each}}
     {{/each}}
   </script>
   <script type="text/x-handlebars" id="education">
