@@ -26,3 +26,4 @@ var experience = [{
         {text: 'Assessed new technologies and alternatives to existing systems (such as mobile and SMS service)'}
         ]
 }];
+resumeData = {name: 'Nathan Jervis', experience: experience}
