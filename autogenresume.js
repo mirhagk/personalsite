@@ -9,7 +9,6 @@ function FormatTemplate(template, object){
     var eachRegex = /{{#each ?([^{}]*)}}([\s\S]*?){{\/each}}/g;
     var each = eachRegex.exec(result);
     while(each!=null){
-        console.log('found');
         var array = object[each[1]];
         var section = "";
         for(var i = 0;i<array.length;i++){
@@ -24,10 +23,19 @@ function FormatTemplate(template, object){
     var matches = template.match(/{{[^#/{}][^{}]*}}/g);
     if (matches!=null){
         for(var i=0;i<matches.length;i++){
-            var key = matches[i].substring(2,matches[i].length-2);
-            console.log(key);
-            if (object[key]!=null)
-                result = result.replace('{{'+key+'}}',object[key]);
+            var originalKey = matches[i].substring(2,matches[i].length-2);
+            var key = originalKey.substring(0,originalKey.length);
+            var obj = object;
+            var kip = key.indexOf('.');
+            while (kip>-1){
+                if (obj!=null)
+                    obj =obj[key.substring(0,kip)];
+                key = key.substring(kip+1,key.length);
+                kip=key.indexOf('.');
+            }
+            if (obj!=null && obj[key]!=null){
+                result = result.replace('{{'+originalKey+'}}',obj[key]);
+            }
         }
     }
     //for(var i=0;i<each.length;i++){
@@ -40,7 +48,7 @@ function FormatTemplate(template, object){
 }
 
 var fs = require('fs');
-var contents = fs.readFileSync('template/test.txt').toString();
+var contents = fs.readFileSync('template/resume.tex').toString();
 var resume = {thing: 'stuff', test: 'things'}
 contents = FormatTemplate(contents,resumeData);
 console.log(contents);
