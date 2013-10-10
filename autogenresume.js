@@ -4,6 +4,11 @@ require('./website/js/resume.js');
 function puts(error, stdout, stderr) { console.log(stdout) }
 //exec("dir", puts);
 
+function GetEachTags(text){
+    var eachStart = /{{#each ?([^{}]*)}}/g;
+    var each = eachStart.exec(text);
+}
+
 function FormatTemplate(template, object){
     var result = template;
     var eachRegex = /{{#each ?([^{}]*)}}([\s\S]*?){{\/each}}/g;
