@@ -4,6 +4,13 @@ require('./website/js/resume.js');
 function puts(error, stdout, stderr) { console.log(stdout) }
 //exec("dir", puts);
 
+//Splits the input into tokens, basically either text or hanlebar sections
+function Tokenizer(text){
+	var handlebar = /{{[^}]*}}/g;
+	var next = handlebar.exec(text);
+	console.log(next);
+}
+
 function GetEachTags(text){
     var eachStart = /{{#each ?([^{}]*)}}/g;
     var each = eachStart.exec(text);
@@ -54,6 +61,7 @@ function FormatTemplate(template, object){
 
 var fs = require('fs');
 var contents = fs.readFileSync('template/resume.tex').toString();
-var resume = {thing: 'stuff', test: 'things'}
-contents = FormatTemplate(contents,resumeData);
-console.log(contents);
+var tokens = Tokenizer(contents);
+console.log(tokens);
+//contents = FormatTemplate(contents,resumeData);
+//console.log(contents);
