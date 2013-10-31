@@ -8,3 +8,5 @@ var fs = require('fs');
 var contents = fs.readFileSync('../template/resume.tex').toString();
 var tokens = parser.tokenizer(contents);
 console.log(tokens);
+console.log('================');
+console.log(parser.parser(tokens));

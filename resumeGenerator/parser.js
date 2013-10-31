@@ -3,10 +3,6 @@ exports.tokenizer = function(text){
 	var handlebar = /{{[^{}]*}}/;
 	var next = handlebar.exec(text);
 	var tokens = [];
-	console.log(next);
-	console.log(next[0]);
-	console.log(next.index);
-	console.log('=============');
 	while(next!=null){
 		tokens.push({
 			type: "content", 
@@ -14,7 +10,6 @@ exports.tokenizer = function(text){
 		});
 		var token = next[0];
 		token = token.substr(2,token.length-4);
-		console.log(token);
 		switch(token[0])
 		{
 			case '#':
@@ -48,3 +43,26 @@ exports.tokenizer = function(text){
 		});
 	return tokens;
 }
+exports.parser = function(tokens, field){
+	field = field || "root";
+	var root = {children:[]};
+	for(var i = 0;i<tokens.length;i++){
+		var token = tokens[i];
+		if (token.type=="eachBegin"){
+			var eachCount = 1;
+			var subtokens=[];
+			while(eachCount>0){
+				i++
+				if (tokens[i].type=="eachBegin")
+					eachCount++;
+				else if (tokens[i].type=="eachEnd")
+					eachCount--;
+				subtokens.push(tokens[i]);
+			}
+		}
+		else
+			root.children.push(token);
+	}
+	return root;
+}
+exports.tpar
