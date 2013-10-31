@@ -1,5 +1,5 @@
 //Splits the input into tokens, basically either text or hanlebar sections
-exports.tokenizer = function(text){
+function Tokenize(text){
 	var handlebar = /{{[^{}]*}}/;
 	var next = handlebar.exec(text);
 	var tokens = [];
@@ -32,7 +32,6 @@ exports.tokenizer = function(text){
 				});
 				break;
 		}
-		//tokens.push(next[0]);
 		text = text.substr(next.index+next[0].length);
 		next = handlebar.exec(text);
 	}
@@ -43,9 +42,8 @@ exports.tokenizer = function(text){
 		});
 	return tokens;
 }
-exports.parser = function(tokens, field){
-	field = field || "root";
-	var root = {children:[]};
+function Parse(tokens, field){
+	var root = {children:[], field: field || "root"};
 	for(var i = 0;i<tokens.length;i++){
 		var token = tokens[i];
 		if (token.type=="eachBegin"){
@@ -59,10 +57,18 @@ exports.parser = function(tokens, field){
 					eachCount--;
 				subtokens.push(tokens[i]);
 			}
+			subtokens.pop(); //remove the last eachEnd
+			var inner = Parse(subtokens,token.text);
+			root.children.push(inner);
 		}
 		else
 			root.children.push(token);
 	}
 	return root;
 }
-exports.tpar
+function Format(text, object){
+	var tree = Parse(Tokenize(text));
+}
+exports.parse = Parse;
+exports.tokenize = Tokenize;
+exports.format = Format;

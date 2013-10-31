@@ -6,7 +6,7 @@ require('../website/js/resume.js');
 
 var fs = require('fs');
 var contents = fs.readFileSync('../template/resume.tex').toString();
-var tokens = parser.tokenizer(contents);
+var tokens = parser.tokenize(contents);
 console.log(tokens);
 console.log('================');
-console.log(parser.parser(tokens));
+console.log(parser.parse(tokens));
