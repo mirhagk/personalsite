@@ -43,7 +43,7 @@ function Tokenize(text){
 	return tokens;
 }
 function Parse(tokens, field){
-	var root = {children:[], field: field || "root"};
+	var root = {children:[], field: field || "root", type:"parseTree"};
 	for(var i = 0;i<tokens.length;i++){
 		var token = tokens[i];
 		if (token.type=="eachBegin"){
@@ -57,8 +57,11 @@ function Parse(tokens, field){
 					eachCount--;
 				subtokens.push(tokens[i]);
 			}
-			subtokens.pop(); //remove the last eachEnd
+			//remove the last eachEnd
+			subtokens.pop();
+			//Parse the section inbetween the each tokens
 			var inner = Parse(subtokens,token.text);
+			//and add the parsed object to the children
 			root.children.push(inner);
 		}
 		else
@@ -66,9 +69,44 @@ function Parse(tokens, field){
 	}
 	return root;
 }
-function Format(text, object){
-	var tree = Parse(Tokenize(text));
+function FormatEach(tree, objects){
+	var result = "";
+	for(var i=0;i<objects.length;i++){
+		result+=Format(tree,objects[i]);
+	}
+	return result;
+}
+function GetFromObject(object, field){
+	var index = field.indexOf('.')
+	if (index<0)//no subfields
+		return object[field];
+	var start = field.substr(0,index);
+	var end = field.substr(index+1);
+	return GetFromObject(object[start],end);
+}
+function Format(tree, object){
+	console.log('----');
+	console.log(object);
+	console.log('/----');
+	var result = "";
+	for(var i =0;i<tree.children.length;i++){
+		var token = tree.children[i];
+		if (token.type == "parseTree"){//handle parse tree
+			result+=FormatEach(token,object[token.field]);
+		}
+		else{
+			if (token.type=="content")
+				result+=token.text;
+			else if (token.type=="replacement"){
+				console.log('replacement: '+token.text +":"+GetFromObject(object,token.text));
+				result+=GetFromObject(object,token.text);
+			}
+		}
+	}
+	return result;
 }
 exports.parse = Parse;
 exports.tokenize = Tokenize;
-exports.format = Format;
+exports.format = function(text,object){
+	return Format(Parse(Tokenize(text)),object);
+};
