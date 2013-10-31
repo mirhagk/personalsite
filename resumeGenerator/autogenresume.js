@@ -1,67 +1,10 @@
 var sys = require('sys')
 var exec = require('child_process').exec;
-require('./website/js/resume.js');
+require('./lib.js');
+var parser = require('./parser.js');
+require('../website/js/resume.js');
 //var wait = require('wait.for');
-function puts(error, stdout, stderr) { console.log(stdout) }
 //exec("dir", puts);
-
-if (typeof String.prototype.startsWith != 'function') {
-  String.prototype.startsWith = function (str){
-    return this.slice(0, str.length) == str;
-  };
-}
-
-
-//Splits the input into tokens, basically either text or hanlebar sections
-function Tokenizer(text){
-	var handlebar = /{{[^{}]*}}/;
-	var next = handlebar.exec(text);
-	var tokens = [];
-	console.log(next);
-	console.log(next[0]);
-	console.log(next.index);
-	console.log('=============');
-	while(next!=null){
-		tokens.push({
-			type: "content", 
-			text: text.substr(0,next.index)
-		});
-		var token = next[0];
-		token = token.substr(2,token.length-4);
-		console.log(token);
-		switch(token[0])
-		{
-			case '#':
-				if (token.startsWith("#each "))
-					tokens.push({
-						type: "eachBegin",
-						text: token.substr("#each ".length)
-					});
-				break;
-			case '/':
-				if (token.startsWith("/each"))
-					tokens.push({
-						type: "eachEnd"
-					});
-				break;
-			default:
-				tokens.push({
-					type: "replacement",
-					text: token
-				});
-				break;
-		}
-		//tokens.push(next[0]);
-		text = text.substr(next.index+next[0].length);
-		next = handlebar.exec(text);
-	}
-	if (text.length!=0)
-		tokens.push({
-			type: "content", 
-			text: text
-		});
-	return tokens;
-}
 
 function GetEachTags(text){
     var eachStart = /{{#each ?([^{}]*)}}/g;
@@ -102,18 +45,14 @@ function FormatTemplate(template, object){
             }
         }
     }
-    //for(var i=0;i<each.length;i++){
-        //console.log(each[i]);
-    //}
-    //console.log(each[0]);
-    //console.log(each[1]);
     console.log('-------');
     return result;
 }
 
+console.log(parser);
 var fs = require('fs');
-var contents = fs.readFileSync('template/resume.tex').toString();
-var tokens = Tokenizer(contents);
+var contents = fs.readFileSync('../template/resume.tex').toString();
+var tokens = parser.tokenizer(contents);
 console.log(tokens);
 //contents = FormatTemplate(contents,resumeData);
 //console.log(contents);
