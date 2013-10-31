@@ -1,5 +1,31 @@
 \subsection{Professional}
 {{#each experience}}
-    \cventry{{{dates.start}}--{{dates.end}}}{{{title}}}{{{name}}}{{{location}}}{}{{{description}}}
+    \cventry{{{dates.start}}--{{dates.end}}}{{{title}}}{{{name}}}{{{location}}}{}{{{description}}{}
+		\begin{itemize}
+			\item \textbf{Responsibilities:}
+			\begin{itemize}
+				{{#each respon}}
+					{{text}}
+				{{/each}}
+			\end{itemize}
+			\item \textbf{Main Technologies Used:}
+			\vspace{-4mm}
+			\begin{multicols}{2}
+				\begin{itemize}
+					{{#each tech}}
+						\item {{name}}
+					{{/each}}
+				\end{itemize}
+			\end{multicols}
+		\end{itemize}
+		\vspace{-3mm}
+		\item \textbf{Accomplishments:}
+		\begin{itemize}
+			{{#each accom}}
+			\item {{text}}
+			{{/each}}
+		\end{itemize}
+		%\vspace{3mm}
+	}
 {{/each}}
-\hfill
+%\hfill
