@@ -85,9 +85,6 @@ function GetFromObject(object, field){
 	return GetFromObject(object[start],end);
 }
 function Format(tree, object){
-	console.log('----');
-	console.log(object);
-	console.log('/----');
 	var result = "";
 	for(var i =0;i<tree.children.length;i++){
 		var token = tree.children[i];
@@ -98,7 +95,6 @@ function Format(tree, object){
 			if (token.type=="content")
 				result+=token.text;
 			else if (token.type=="replacement"){
-				console.log('replacement: '+token.text +":"+GetFromObject(object,token.text));
 				result+=GetFromObject(object,token.text);
 			}
 		}
