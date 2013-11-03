@@ -50,3 +50,11 @@ user - Any person which uses any code within the repo. Use in this case means ru
 
 derivative work - Any code that is created by a person based on the code contained in this repo. This does not include code that is generated automatically by a computer program.
 
+terms - the conditions set out in the "Terms" section of this license.
+
+Rights
+----------
+
+As a user, you have the right to use this code in whatever way you see fit subject to the terms below. Any use of the contents of this repo that is legal in your jurisdiction is allowed by this license, so long as the terms are met. These include, but are not limited to:
+
+Making electronic or physical copies, distributing, selling, re-licensing, altering, publishing, damaging 
