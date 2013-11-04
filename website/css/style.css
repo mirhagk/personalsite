@@ -39,3 +39,7 @@ ul.two-col
 	color: #fff;
 	border-bottom: 3px dashed #777;
 }
+.footer p
+{
+	display: inline;
+}
