@@ -57,4 +57,8 @@ Rights
 
 As a user, you have the right to use this code in whatever way you see fit subject to the terms below. Any use of the contents of this repo that is legal in your jurisdiction is allowed by this license, so long as the terms are met. These include, but are not limited to:
 
-Making electronic or physical copies, distributing, selling, re-licensing, altering, publishing, damaging 
+Making electronic or physical copies, distributing, selling, re-licensing, altering, publishing, reviewing any contents of the repo.
+
+Terms
+---------
+
