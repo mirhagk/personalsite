@@ -5,6 +5,7 @@ App.Router.map(function() {
   this.resource('projects');
   this.resource('experience');
   this.resource('education');
+  this.resource('ad');
   this.resource('posts', function() {
     this.resource('post', { path: ':post_id' });
   });
