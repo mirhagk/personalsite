@@ -130,28 +130,33 @@
     </div>
   </script>
   <script type="text/x-handlebars" id="experience">
-    {{#each model}}
+	{{#each model}}
+	<div class="experience">
         <h2>{{name}}</h2>
         <p><em>{{location}}</em></p>
         <p><strong>{{title}}</strong></p>
-        <h3>Technologies Used:</h3>
-        <ul>
-        {{#each tech}}
-            <li>{{name}}</li>
-        {{/each}}
-        </ul>
-        <h3>Responsibilities</h3>
-        <ul>
-        {{#each respon}}
-            <li>{{text}}</li>
-        {{/each}}
-        </ul>
-        <h3>Accomplishments</h3>
-        <ul>
-        {{#each accom}}
-            <li>{{text}}</li>
-        {{/each}}
-        </ul>
+		<details open>
+			<summary>More details:</summary>
+			<h3>Technologies Used:</h3>
+			<ul class="two-col">
+			{{#each tech}}
+				<li>{{name}}</li>
+			{{/each}}
+			</ul>
+			<h3>Responsibilities:</h3>
+			<ul class="two-col">
+			{{#each respon}}
+				<li>{{text}}</li>
+			{{/each}}
+			</ul>
+			<h3>Accomplishments:</h3>
+			<ul class="two-col">
+			{{#each accom}}
+				<li>{{text}}</li>
+			{{/each}}
+			</ul>
+		</details>
+	</div>
     {{/each}}
   </script>
   <script type="text/x-handlebars" id="education">
