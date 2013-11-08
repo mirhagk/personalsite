@@ -52,19 +52,41 @@ Definitions:
 
 > __repo__ - Any code or data that this license pertains to, which is part of this repository or folder/directory.
 
+> __author__ - the creator of this repo, `Nathan Jervis`
+
 > __user__ - Any person which uses any code within the repo. Use in this case means running the code through a computer program to perform it's actions, or inspecting the code for the purpose of performing some action. Using in this context should be considered as broad as it can be, covering any possible use of the code.
 
 > __derivative work__ - Any code that is created by a person based on the code contained in this repo. This does not include code that is generated automatically by a computer program.
 
 > __terms__ - the conditions set out in the "Terms" section of this license.
 
+> __copy__ - A copy is any code or data that matches, or very close closely matches the code or data in this repo, or any subset of the code or data within it. This also includes any code that is generated automatically by a computer program from this. A person must make substantial changes in order for this to not be a copy
+
 Rights
 ----------
 
 As a user, you have the right to use this code in whatever way you see fit subject to the terms below. Any use of the contents of this repo that is legal in your jurisdiction is allowed by this license, so long as the terms are met. These include, but are not limited to:
 
-Making electronic or physical copies, distributing, selling, re-licensing, altering, publishing, reviewing any contents of the repo.
+> Making electronic or physical copies, distributing, selling, re-licensing, altering, publishing, reviewing any contents of the repo.
 
 Terms
 ---------
 
+The terms for obtaining these rights are the following:
+
+1. Any copy of this code must either include this license, or contain a reference to point users to a site that has this license, so the users may obtain the original copy. (an example of a site that will host this license is the github repository [https://github.com/mirhagk/personalsite](), or [http://nathanjervis.com/#sitelicense]()).
+
+2. Any derivative works must reference the original work it was based off of, and link to the original license. It should also mention the author.
+
+3. If the user ever meets the author, they should buy the author a drink, or give him some food.
+
+4. You may not hold the author accountable for any damages caused by use of the code.
+
+5. You may not use the personal data within this repository to refer to anyone else except the person it was written about. If the repo is going to be used to promote or talk about someone else, then the personal data must be removed that talks about the original author.
+
+6. The personal data can't be altered except without simply removing the personal data from this repo.
+
+DISCLAIMER
+----------
+
+**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.**
