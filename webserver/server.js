@@ -29,6 +29,7 @@ function CreateSite(path, res){
 }
 
 http.createServer(function (req, res) {
+	util.log(req.url);
 	if (req.url == '/' || req.url == '/index.html'){
 		var files = fs.readdirSync(templateFolder+'pages');
 		res.writeHead(200);
