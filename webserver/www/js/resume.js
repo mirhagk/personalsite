@@ -92,4 +92,10 @@ var experience = [{
 		{text: 'Construct database and API according to specification'}
 		]
 }];
-resumeData = {name: 'Nathan Jervis', experience: experience}
+resumeData = {
+	firstName: 'Nathan',
+	lastName: 'Jervis',
+	address: '#12 293 Limeridge Rd W',
+	postalCode: 'L9C 2V4',
+	experience: experience
+	}
