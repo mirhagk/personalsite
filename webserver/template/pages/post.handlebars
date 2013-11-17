@@ -1,18 +1,18 @@
-    {{#if isEditing}}
-      {{partial 'post/edit'}}
-      <button {{action 'doneEditing'}}>Done</button>
-    {{else}}
-    {{/if}}
+{{#if isEditing}}
+	{{partial 'post/edit'}}
+	<button {{action 'doneEditing'}}>Done</button>
+{{else}}
+{{/if}}
 
-    <h1>{{title}}</h1>
-    <h2>by {{author.name}} <small class='muted'>({{format-date date}})</small></h2>
+<h1>{{title}}</h1>
+<h2>by {{author.name}} <small class='muted'>({{format-date date}})</small></h2>
 
-    <hr>
+<hr>
 
-    <div class='intro'>
-      {{format-markdown excerpt}}
-    </div>
+<div class='intro'>
+	{{format-markdown excerpt}}
+</div>
 
-    <div class='below-the-fold'>
-      {{format-markdown body}}
-    </div>
+<div class='below-the-fold'>
+	{{format-markdown body}}
+</div>
