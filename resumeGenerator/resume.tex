@@ -1,0 +1,221 @@
+\documentclass[11pt,letterpaper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage{multicol}
+\usepackage{verbatim} 
+\usepackage{amssymb,amsmath}
+\usepackage[scale=0.75]{geometry}
+\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\firstname{Nathan}
+\familyname{Jervis}
+\title{Resume}                          % optional, remove / comment the line if not wanted
+\address{\#12 293 Limeridge rd w}{L9C 2V4}    % optional, remove / comment the line if not wanted
+\mobile{+1~(905)~807~3399}                     % optional, remove / comment the line if not wanted
+\phone{+1~(905)~389~6674}                      % optional, remove / comment the line if not wanted
+%\fax{+3~(456)~789~012}                        % optional, remove / comment the line if not wanted
+\email{nathan@nathanjervis.com}                          % optional, remove / comment the line if not wanted
+\homepage{http://nathanjervis.com}                    % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}            % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                  % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{ }                            % optional, remove / comment the line if not wanted
+
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%custom macros
+\newcommand{\CSharp}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\scriptsize\textbf \#}}
+%\newcommand{\CSharp}{C\texttt{\#}}
+%\newcommand{\CSharp}{C$^\sharp$}
+%\newcommand{\CSharp}{C$\sharp$}
+%\newcommand{\CSharp}{C\#}
+%\newcommand{\CSharp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-2}{\textbf{\#}}}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+\begin{comment}
+\thispagestyle{empty}
+\clearpage
+%-----       letter       ---------------------------------------------------------
+% recipient data
+\recipient{McAfee}{}
+%\date{July 23, 2013}
+\opening{To whom it may concern,}
+\closing{I look forward to hearing from you,\\
+\includegraphics[scale=1]{signature.jpg}\vspace{-10mm}}
+\enclosure[Attached]{Resume}     % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\makelettertitle
+
+I would like to apply for the position of .NET Developer for the McAfee Consumer Tools Engineering team. 
+
+I am highly profecient in .NET technologies, including \CSharp, ASP.NET, LINQ and many others. I have built systems for several companies using ASP.NET server, with an HTML/Javascript client. This included designing an API for the client and server to interact with, designing and building a database, and writing documentation to explain the API and system. 
+
+Developing clinical trial software for a heart research facility meant that I got lots of experience working with document specifications, proper testing, source control, following best practices for coding, and participating in code reviews. This prepared me well for systems which must be documented, tested and reliable.
+
+I have also been the lead software developer on several back end systems for mobile technologies. I have designed and built databases and servers which follow industry standard best practices, and are reliable as well as scalable. I have mentored and trained junior developers, either being in control of a project, or from learning the project so quickly and thoroughly I was selected to train new candidates.
+
+I feel like I'd be a great fit with the McAfee Consumer Tools team given my expertise, and look forward to meeting with you. You can contact me anytime on my cell at \href{tel:9058073399}{905 807 3399}, or by e-mail at \href{mailto:nathan@nathanjervis.com}{nathan@nathanjervis.com}
+
+You'll find my resume attached,
+Look forward to hearing from you,
+Nathan Jervis
+
+\makeletterclosing
+%\thispagestyle{empty}
+\end{comment}
+
+%\clearpage\end{CJK*}                         % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+
+\newpage
+\setcounter{page}{1}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\subsection{Professional}
+
+    \cventry{February 2012--December 2012}{Software Solutions Developer}{Population Health Research Institute}{Hamilton, ON}{}{Develop clinical trial management systems{}
+		\begin{itemize}
+			\item \textbf{Responsibilities:}
+			\begin{itemize}
+				\item Develop websites and design databases
+				\item Diagnose and fix bugs, documenting solutions using TFS
+				\item Follow specification to create validated systems that comply to the user's needs
+				\item Create reports and database views
+				\item Help new students get started at the work place
+				\end{itemize}
+			\item \textbf{Main Technologies Used:}
+			\vspace{-4mm}
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item C\#
+					\item ExtJS
+					\item LINQ/SQL
+					\item ASP.NET
+					\item TFS
+					\item RDL/RDLC
+					\end{itemize}
+			\end{multicols}
+			\vspace{-3mm}
+			\item \textbf{Accomplishments:}
+			\begin{itemize}
+				\item Main developer for several projects including SAHARA clinical trial
+				\item Built public website for assessing heart risk score <a href="https://rome.phri.ca/interheartriskscore">https://rome.phri.ca/interheartriskscore</a>
+				\item Found security flaws, such as SQL injections, fixed flaws and led redeployment of project
+				\item Assessed new technologies and alternatives to existing systems (such as mobile and SMS service)
+				\end{itemize}
+			%\vspace{3mm}
+		\end{itemize}
+	}
+
+    \cventry{March 2013--October 2013}{Lead Software Architect}{Quickee Inc}{Hamilton, ON}{}{Design, architect and create entire Quickee system, including client, server and database{}
+		\begin{itemize}
+			\item \textbf{Responsibilities:}
+			\begin{itemize}
+				\item Gather system requirements and design database structure
+				\item Design an interface for the mobile application to communicate with the server
+				\item Evaluate solutions for mobile applications, and select technologies
+				\item Build a mobile application to facilitate ordering specials from local restaurants
+				\item Build a server that will scale easily, and allow for rapid future changes
+				\end{itemize}
+			\item \textbf{Main Technologies Used:}
+			\vspace{-4mm}
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item C\#
+					\item ASP.NET
+					\item Azure Cloud Services
+					\item HTML/CSS
+					\item Javascript/JQuery
+					\item Phonegap
+					\item SQL/LINQ
+					\end{itemize}
+			\end{multicols}
+			\vspace{-3mm}
+			\item \textbf{Accomplishments:}
+			\begin{itemize}
+				\item Built tool to compress javascript, compile less code, zip code into package and upload package to <a href="http://build.phonegap.com">http://build.phonegap.com</a> to build mobile apps
+				\end{itemize}
+			%\vspace{3mm}
+		\end{itemize}
+	}
+
+    \cventry{March 2013--September 2013}{President and Lead Programmer}{NVC Software Solutions}{Hamilton, ON}{}{Created a ran a software contracting company. Served several clients building websites, applications and more.{}
+		\begin{itemize}
+			\item \textbf{Responsibilities:}
+			\begin{itemize}
+				\item Attract clients and negotiate contracts
+				\item Manage a team of developers, delegating work, training and reviewing code
+				\item Report all finances and make spending decisions
+				\end{itemize}
+			\item \textbf{Main Technologies Used:}
+			\vspace{-4mm}
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item C\#
+					\item Java
+					\item SQL
+					\item Python
+					\item HTML/CSS
+					\item Javascript/JQuery
+					\item Bootstrap
+					\end{itemize}
+			\end{multicols}
+			\vspace{-3mm}
+			\item \textbf{Accomplishments:}
+			\begin{itemize}
+				\item Build a bot to crawl and analyze local websites and assess whether a website redesign could be useful automatically. Based on several factors including html tag usage
+				\end{itemize}
+			%\vspace{3mm}
+		\end{itemize}
+	}
+
+    \cventry{October 2013--present}{Lead Backend Programmer}{Rendezvous Mobile}{Hamilton, ON}{}{Design, architect and create backend for mobile application. Mobile application details are still confidential.{}
+		\begin{itemize}
+			\item \textbf{Responsibilities:}
+			\begin{itemize}
+				\item Design a protocol for the client application to communicate with the server
+				\item Draft specification documents and database layout
+				\item Construct database and API according to specification
+				\end{itemize}
+			\item \textbf{Main Technologies Used:}
+			\vspace{-4mm}
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item C\#
+					\item ASP.NET
+					\item Azure Cloud Services
+					\item SQL/LINQ
+					\item JSON
+					\end{itemize}
+			\end{multicols}
+			\vspace{-3mm}
+			\item \textbf{Accomplishments:}
+			\begin{itemize}
+				\item nope
+			\end{itemize}
+			%\vspace{3mm}
+		\end{itemize}
+	}
+
+%\hfill

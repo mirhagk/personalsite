@@ -1,3 +1,8 @@
+function EscapeInput(text){
+	var result = text.replace("#","\\#");
+	return result;
+}
+
 //Splits the input into tokens, basically either text or hanlebar sections
 function Tokenize(text){
 	var handlebar = /{{[^{}]*}}/;
@@ -70,9 +75,11 @@ function Parse(tokens, field){
 	return root;
 }
 function FormatEach(tree, objects){
+	if (objects == null)
+		return;
 	var result = "";
 	for(var i=0;i<objects.length;i++){
-		result+=Format(tree,objects[i]);
+		result += Format(tree,objects[i]);
 	}
 	return result;
 }
@@ -93,9 +100,9 @@ function Format(tree, object){
 		}
 		else{
 			if (token.type=="content")
-				result+=token.text;
+				result += token.text;
 			else if (token.type=="replacement"){
-				result+=GetFromObject(object,token.text);
+				result += EscapeInput(GetFromObject(object,token.text));
 			}
 		}
 	}
