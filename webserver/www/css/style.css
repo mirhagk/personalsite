@@ -36,8 +36,11 @@ ul.two-col
 }
 .experience h2
 {
-	color: #fff;
 	border-bottom: 3px dashed #777;
+}
+.page h2
+{
+	color: #fff;
 }
 .footer p
 {

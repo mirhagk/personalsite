@@ -92,6 +92,11 @@ var experience = [{
 		{text: 'Construct database and API according to specification'}
 		]
 }];
+var education = [
+{
+	degree: 'Honours Computer Science',
+	description: 'Working towards a BASc in Honours Computer Science at McMaster University'
+}];
 resumeData = {
 	firstName: 'Nathan',
 	lastName: 'Jervis',

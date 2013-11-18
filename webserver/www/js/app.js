@@ -17,6 +17,12 @@ App.ExperienceRoute = Ember.Route.extend({
     }
 });
 
+App.EducationRoute = Ember.Route.extend({
+	model: function(){
+		return education;
+	}
+});
+
 App.PostsRoute = Ember.Route.extend({
   model: function() {
     return posts;
