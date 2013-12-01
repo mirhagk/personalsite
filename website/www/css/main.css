@@ -19,13 +19,14 @@ body,
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
-
+.right{
+    text-align: right;
+}
 
 /* --------------------------
  * Element Styles
  * --------------------------
 */
-
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -125,13 +126,22 @@ aside {
  */
 
 /* The content div is placed as a wrapper around all the docs */
+.footer{
+    font-size:0.8em;
+}
+.footer p{
+    margin: 0 0;
+}
+.footer hr{
+    margin-bottom: 0;
+}
 .content {
     margin: 0 auto;
     padding: 0 2em;
     max-width: 800px;
     margin-bottom: 50px;
 }
-    .content p {
+    .content p, div.footer p {
         line-height: 1.6em;
         font-size: 1.125em;
     }
