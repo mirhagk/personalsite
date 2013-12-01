@@ -25,15 +25,3 @@ function CompileFolder(folder,outputFolder){
 
 CompileFolder('pages','');
 CompileFolder('blog','blog');
-
-/*
-template = bliss.compileFile(__dirname+'/src/pages.layout');
-var pages = fs.readdirSync(__dirname+'/src/pages');
-console.log('found pages: ', pages);
-
-pages.forEach(function(page){
-	var things = template(Title(page),function(){
-		return bliss.render(__dirname+"/src/pages/"+page);
-	});
-	fs.writeFileSync(__dirname+'/www/'+Title(page)+'.html',things);
-});*/
