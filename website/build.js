@@ -12,7 +12,7 @@ function capitaliseFirstLetter(string){
 
 
 function CompileFolder(folder,outputFolder){
-	var template = bliss.compileFile(__dirname+'/src/'+folder+'.layout');
+	var template = bliss.compileFile(__dirname+'/src/layout');
 	var items = fs.readdirSync(__dirname + '/src/'+folder);
 	console.log('compiling '+folder+' found items: ',items);
 	items.forEach(function(item){
@@ -24,4 +24,4 @@ function CompileFolder(folder,outputFolder){
 }
 
 CompileFolder('pages','');
-CompileFolder('blog','blog');
+CompileFolder('blog','blog/');
