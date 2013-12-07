@@ -1,0 +1,30 @@
+﻿@functions
+{
+    private static string MakeID(string x)
+    {
+        return x.Replace("[^a-zA-Z]*", "");
+    }
+    private static string GetPage(string page)
+    {
+        if (String.Equals("home", page,StringComparison.InvariantCultureIgnoreCase))
+            return "index";
+        return page;
+    }
+    private static string GetURL(string page)
+    {
+        return "/Home/" + GetPage(page);
+    }
+}
+@helper Heading(string text)
+{
+    <h2 id="@MakeID(text)" class="content-subhead"><a href="#@MakeID(text)">@text</a></h2>
+}
+@helper NavPage(string title)
+{
+    <li @(String.Equals(Page.Title,Helper.GetPage(title))?"class='pure-menu-selected'":"")><a href="@(GetURL(title))">@title</a></li>
+}
+@helper NavOption(string title, string url)
+{
+    <li class="pure-menu-selected"><a href="@url">@title</a></li>
+    @*<li @(String.Equals(Page.Title,title)?"class='pure-menu-selected'":"")><a href="@(title)">@title</a></li>*@
+}

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "post";
+    Layout = "~/Views/Layout.cshtml";
+}
+<div class="header">
+    <h1>Blog</h1>
+    <h2>Nathan Jervis</h2>
+</div>
+
+
+<div class="content">
+    <div>@Html.Raw(Model.BlogPost)</div>
+    <div class="pure-g-r">
+        <div class="pure-u-1-4">
+            <a href="/blog/first">First Post</a>
+        </div>
+        <div class="pure-u-1-4">
+            <a href="/blog/@Model.Previous">Previous Post</a>
+        </div>
+        <div class="pure-u-1-4" style="text-align:right;">
+            <a href="/blog/@Model.Next">Next Post</a>
+        </div>
+        <div class="pure-u-1-4" style="text-align:right;">
+            <a href="/blog/last">Last Post</a>
+        </div>
+    </div>
+</div>
