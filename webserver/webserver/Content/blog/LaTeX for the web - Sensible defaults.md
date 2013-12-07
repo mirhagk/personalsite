@@ -16,7 +16,7 @@ You can't really do this with the web. Sure you can fake it with divs with class
 
 The biggest tragedy with the web solution is that it's almost as hard to learn or use as to write it yourself. Also the fact that its hard to do any sort of configuration means that libraries are often unable to be configured without diving into source code. This means there are thousands of libraries competing to do essentially the same thing. All of them are implemented slightly different too, so mixing and matching libraries is not fun. LaTeX on the other hand has very libraries that are easily configured and easy to use.
 
-Speaking practically, it is not pretty much a requirement to know JavaScript to build beautiful sites, whereas I barely know anything about creating LaTeX elements (I can define simple macros that's about it) and I'm able to create absolutely gorgeous LaTeX documents with all kinds of bells and whistles.
+Speaking practically, it is pretty much a requirement to know JavaScript to build beautiful sites, whereas I barely know anything about creating LaTeX elements (I can define simple macros that's about it) and I'm able to create absolutely gorgeous LaTeX documents with all kinds of bells and whistles.
 
 The web unfortunately evolved instead of being planned, which means we're stuck with abusing languages for things they weren't designed for. HTML used to do all the basic structural elements, nowadays you need to import JavaScript to do anything. We rely on JQuery for features that should've be standardized and use classes for elements that we should be able to create.
 
