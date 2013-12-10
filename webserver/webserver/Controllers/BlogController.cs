@@ -60,14 +60,16 @@ namespace webserver.Controllers
             Models.BlogModel model = new Models.BlogModel();
             model.BlogPost = GetBlogContent(post.Url);
             model.Title = post.Title;
-            
+
             if (config.Posts.Length <= index + 1)
-                model.Next = "last";
+                model.Next = null;
+            //model.Next = "last";
             else
                 model.Next = "post?title=" + config.Posts[index + 1].Url;
-            
+
             if (index < 1)
-                model.Previous = "first";
+                model.Previous = null;
+            //model.Previous = "first";
             else
                 model.Previous = "post?title=" + config.Posts[index - 1].Url;
 

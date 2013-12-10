@@ -15,10 +15,16 @@
             <a href="/blog/first">First Post</a>
         </div>
         <div class="pure-u-1-4">
-            <a href="/blog/@Model.Previous">Previous Post</a>
+            @if (Model.Previous != null)
+            {
+                <a href="/blog/@Model.Previous">Previous Post</a>
+            }
         </div>
         <div class="pure-u-1-4" style="text-align:right;">
-            <a href="/blog/@Model.Next">Next Post</a>
+            @if (Model.Next != null)
+            {
+                <a href="/blog/@Model.Next">Next Post</a>
+            }
         </div>
         <div class="pure-u-1-4" style="text-align:right;">
             <a href="/blog/last">Last Post</a>
