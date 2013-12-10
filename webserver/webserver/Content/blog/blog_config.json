@@ -2,13 +2,13 @@
 	Posts:
 	[
 		{
-			Title: 'Learn Enough LaTeX to get by',
-			Url:'learning enough LaTeX to get by',
-			Debug: true
-		},
-		{
 			Title: 'LaTeX for the web - Sensible Defaults',
 			Url: 'LaTeX for the web - Sensible Defaults'
+		},
+		{
+			Title: 'Learn Enough LaTeX to get by - Part 1',
+			Url:'learning enough LaTeX to get by - 1',
+			Debug: true
 		}
 	]
 }

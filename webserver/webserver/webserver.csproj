@@ -183,7 +183,7 @@
     <Content Include="Content\blog\blog_config.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\blog\Learning enough LaTeX to get by.md" />
+    <Content Include="Content\blog\Learning enough LaTeX to get by - 1.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Meta\robots.cshtml" />
