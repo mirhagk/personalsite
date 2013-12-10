@@ -11,6 +11,7 @@ namespace webserver.Models
         {
             public string Title { get; set; }
             public string Url { get; set; }
+            public bool Debug { get; set; }
         }
         public Post[] Posts { get; set; }
     }

@@ -27,6 +27,9 @@ namespace webserver.Controllers
         {
             for(int i=0;i<posts.Length;i++)
             {
+                if (!System.Diagnostics.Debugger.IsAttached)
+                    if (posts[i].Debug)
+                        continue;
                 if (String.Equals(posts[i].Url,url,StringComparison.InvariantCultureIgnoreCase))
                     return i;
             }
@@ -35,7 +38,7 @@ namespace webserver.Controllers
         public ActionResult Index()
         {
             var config = LoadConfig();
-            return RedirectToAction("Post","Blog",new {title = config.Posts.Last().Url});
+            return RedirectToAction("Post","Blog",new {title = config.Posts.Where((x)=>!x.Debug).Last().Url});
         }
         public ActionResult Post(string title)
         {
