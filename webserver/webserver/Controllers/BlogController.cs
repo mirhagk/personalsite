@@ -12,7 +12,10 @@ namespace webserver.Controllers
         // GET: /Blog/
         private Models.BlogConfig LoadConfig()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Models.BlogConfig>(GetTextFromPath("/Content/Blog/blog_config.json"));
+            var config = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.BlogConfig>(GetTextFromPath("/Content/Blog/blog_config.json"));
+            if (!System.Diagnostics.Debugger.IsAttached)
+                config.Posts = config.Posts.Where((x) => !x.Debug).ToArray();
+            return config;
         }
         private string GetTextFromPath(string path)
         {
@@ -27,9 +30,6 @@ namespace webserver.Controllers
         {
             for(int i=0;i<posts.Length;i++)
             {
-                if (!System.Diagnostics.Debugger.IsAttached)
-                    if (posts[i].Debug)
-                        continue;
                 if (String.Equals(posts[i].Url,url,StringComparison.InvariantCultureIgnoreCase))
                     return i;
             }
@@ -38,7 +38,7 @@ namespace webserver.Controllers
         public ActionResult Index()
         {
             var config = LoadConfig();
-            return RedirectToAction("Post","Blog",new {title = config.Posts.Where((x)=>!x.Debug).Last().Url});
+            return RedirectToAction("Post","Blog",new {title = config.Posts.Last().Url});
         }
         public ActionResult Post(string title)
         {
