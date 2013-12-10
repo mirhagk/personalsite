@@ -8,6 +8,11 @@ body,
     font-family: "proxima-nova", sans-serif;
 }
 
+.inactive{
+    color: grey;
+    background-color: lightgrey;
+}
+
 
 /* Add transition to containers so they can push in and out */
 #layout,
