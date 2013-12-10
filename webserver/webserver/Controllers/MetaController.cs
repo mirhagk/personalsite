@@ -16,6 +16,10 @@ namespace webserver.Controllers
             Response.ContentType = "text/plain";
             return View();
         }
-
+        public ActionResult Sitemap()
+        {
+            Response.ContentType = "application/xml";
+            return View();
+        }
     }
 }
