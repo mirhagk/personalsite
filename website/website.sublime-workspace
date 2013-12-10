@@ -11,7 +11,7 @@
 			"file": "src/pages/about.js.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 214,
 				"line_ending": "Windows"
 			}
 		},
@@ -19,7 +19,24 @@
 			"file": "src/pages/index.js.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1029,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/nathan/AppData/Roaming/Sublime Text 2/Packages/User/bliss.sublime-build",
+			"settings":
+			{
+				"buffer_size": 78,
+				"line_ending": "Windows",
+				"name": "untitled.sublime-build"
+			}
+		},
+		{
+			"file": "src/pages/projects.js.html",
+			"settings":
+			{
+				"buffer_size": 414,
 				"line_ending": "Windows"
 			}
 		},
@@ -27,29 +44,85 @@
 			"file": "src/layout.js.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 2640,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/header.js.html",
+			"file": "/C/Users/nathan/Dropbox/documents/school/2GA3/MK.Computer.Organization.and.Design.4th.Edition.Oct.2011.pdf",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 17732569,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/education.js.html",
+			"settings":
+			{
+				"buffer_size": 216,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "bliss.sublime-build",
+			"file": "src/pages/experience.js.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 3793,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/heading.js.html",
+			"settings":
+			{
+				"buffer_size": 151,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/css/main.css",
+			"settings":
+			{
+				"buffer_size": 10559,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/menu.js",
+			"settings":
+			{
+				"buffer_size": 8147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 496,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "build.js",
+			"settings":
+			{
+				"buffer_size": 762,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/blog/hello_world.js.html",
+			"settings":
+			{
+				"buffer_size": 156,
 				"line_ending": "Windows",
-				"name": "untitled.sublime-build"
+				"name": "<div class=\"header\">"
 			}
 		}
 	],
-	"build_system": "bliss.sublime-build",
+	"build_system": "Packages/User/bliss.sublime-build",
 	"command_palette":
 	{
 		"height": 0.0,
@@ -73,10 +146,13 @@
 	},
 	"file_history":
 	[
+		"/C/Users/nathan/Documents/GitHub/personalsite/website/src/blog.layout.js.html",
+		"/C/Users/nathan/Documents/GitHub/personalsite/website/src/layout.js.html",
+		"/C/Users/nathan/Documents/GitHub/personalsite/website/bliss.sublime-build"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -90,6 +166,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"href",
+			"url",
+			"right",
+			"h3"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -107,7 +187,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -115,15 +195,15 @@
 					"file": "src/pages/about.js.html",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								132,
+								132
 							]
 						],
 						"settings":
@@ -141,15 +221,15 @@
 					"file": "src/pages/index.js.html",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1029,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								490,
+								456
 							]
 						],
 						"settings":
@@ -165,18 +245,71 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/layout.js.html",
+					"file": "/C/Users/nathan/AppData/Roaming/Sublime Text 2/Packages/User/bliss.sublime-build",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 78,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								78,
+								78
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/pages/projects.js.html",
+					"settings":
+					{
+						"buffer_size": 414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								414,
+								414
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/layout.js.html",
+					"settings":
+					{
+						"buffer_size": 2640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1595,
+								1595
 							]
 						],
 						"settings":
@@ -192,11 +325,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/header.js.html",
+					"buffer": 5,
+					"file": "/C/Users/nathan/Dropbox/documents/school/2GA3/MK.Computer.Organization.and.Design.4th.Edition.Oct.2011.pdf",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 17732569,
 						"regions":
 						{
 						},
@@ -205,6 +338,34 @@
 							[
 								0,
 								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/pages/education.js.html",
+					"settings":
+					{
+						"buffer_size": 216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								54
 							]
 						],
 						"settings":
@@ -218,11 +379,120 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "bliss.sublime-build",
+					"buffer": 7,
+					"file": "src/pages/experience.js.html",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 3793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/heading.js.html",
+					"settings":
+					{
+						"buffer_size": 151,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "www/css/main.css",
+					"settings":
+					{
+						"buffer_size": 10559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1728,
+								1728
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1560.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "www/js/menu.js",
+					"settings":
+					{
+						"buffer_size": 8147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								683,
+								683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "server.js",
+					"settings":
+					{
+						"buffer_size": 496,
 						"regions":
 						{
 						},
@@ -235,7 +505,61 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "build.js",
+					"settings":
+					{
+						"buffer_size": 762,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								762,
+								762
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/blog/hello_world.js.html",
+					"settings":
+					{
+						"buffer_size": 156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div class=\"header\">",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -252,7 +576,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
