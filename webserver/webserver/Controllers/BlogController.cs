@@ -42,6 +42,16 @@ namespace webserver.Controllers
             var config = LoadConfig();
             return RedirectToAction("Post","Blog",new {title = config.Posts.Last().Url});
         }
+        public ActionResult First()
+        {
+            var config = LoadConfig();
+            return RedirectToAction("Post", "Blog", new { title = config.Posts.First().Url });
+        }
+        public ActionResult Last()
+        {
+            var config = LoadConfig();
+            return RedirectToAction("Post", "Blog", new { title = config.Posts.Last().Url });
+        }
         public ActionResult Post(string title)
         {
             var config = LoadConfig();
