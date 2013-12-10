@@ -13,8 +13,10 @@ namespace webserver.Controllers
         private Models.BlogConfig LoadConfig()
         {
             var config = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.BlogConfig>(GetTextFromPath("/Content/Blog/blog_config.json"));
-            if (!System.Diagnostics.Debugger.IsAttached)
+            //if (!System.Diagnostics.Debugger.IsAttached)
+#if !DEBUG
                 config.Posts = config.Posts.Where((x) => !x.Debug).ToArray();
+#endif
             return config;
         }
         private string GetTextFromPath(string path)
