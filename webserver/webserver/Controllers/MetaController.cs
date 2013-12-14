@@ -21,14 +21,25 @@ namespace webserver.Controllers
             Response.ContentType = "application/xml";
             return View();
         }
+        private string GetHost(string url)
+        {
+            return "http://" + new Uri(url).Host.Replace("www.", "");
+        }
+        private bool HasSameHost(string root, string url)
+        {
+            return Uri.IsWellFormedUriString(url, UriKind.Absolute) && GetHost(url) == root;
+        }
         private IEnumerable<string> GetAllLinksForPage(string url)
         {
             try
             {
-                string root = "http://" + new System.Uri(url).Host;
+                string root = GetHost(url);
                 var client = new System.Net.WebClient();
                 CsQuery.CQ data = client.DownloadString(url);
-                return data["a"].Select((x) => x["href"]).Where((x) => x.StartsWith("/")).Select((x) => root + x);
+                var links = data["a"].Select((x) => x["href"]).Where((x)=>!String.IsNullOrWhiteSpace(x));
+
+                return links.Where((x) => x.StartsWith("/")).Select((x) => root + x)
+                    .Union(links.Where((x) => HasSameHost(root,x)));
             }
             catch
             {
@@ -44,6 +55,11 @@ namespace webserver.Controllers
             {
                 links.AddRange(GetAllLinksForPage(links[i]));
                 links = links.Distinct().ToList();
+                if (i >= 100 || links.Count>=500)
+                {
+                    links.Add("too many pages, can't crawl them all");
+                    break;
+                }
             }
             return links;
         }
