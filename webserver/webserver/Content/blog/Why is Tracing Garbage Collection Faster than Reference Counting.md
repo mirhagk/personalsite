@@ -130,57 +130,38 @@ The repercussion of this is that when you ask for a certain memory location, the
 
 Therefore a program should seek to follow the principle of locality as best it can. Reference counting (along with manual memory management) does not follow this principle very well. This is because when you ask for memory, the first few times they come back all in a row, but once you've filled it up and it's grabbing from freed locations, those locations could be anywhere, and you may get completely different memory locations each time you call it in a row.
 
-An example will serve us well. Let's say we are have a program that lets the user decide which cats are best. Here's the program:
+An example will serve us well. Let's say you run your program, and it's gotten to the rather unpleasant state below:
 
-	Cats = []
-	foreach(catPicture in Folder("cats")):
-		cat = Image.Load(catPicture)
-		if (User.Ask("Do you like this cat?","yes","no") == "yes"):
-			Cats.Add(cat)
-	foreach(cat in Cats)
-		DoSomething(cat)
+	block 1 | free
+	block 2 | taken
+	block 3 | free
+	block 4 | taken
+	block 5 | free
 
-So we load the cats as images, then ask if the user likes them, and if so add it to the list. Now the principle of locality states that the images should all be ordered in the order we use them, but this isn't neccessarily true. Let's say we only have room for 10 cats in memory. Memory might look like this:
+The next 3 blocks you ask for will not be next to each other at all, rather they are in completely different locations. This could even be extended to the point where they are in entirely different pages of memory. If you work with these 3 values in a row then they will "thrash" the cache and make your program slow down.
 
-	block 1 | cat 1 (free)
-	block 2 | cat 2
-	block 3 | cat 3 (free)
-	block 4	| cat 4
-	block 5 | cat 5 (free)
-	block 6 | cat 6
-	block 7 | cat 7 (free)
-	block 8 | cat 8 (free)
-	block 9 | cat 9 (free)
-	block 10| cat 10
+With garbage collection you might have a similar memory model (remember that unused memory doesn't get freed until you run out of memory):
 
-Where the blocks marked free are for cats that the user said no, these images aren't needed and can be overridden. Now we load the next cat and we have to re-use the spots from earlier cats. This is fine, this is why we have memory managers. But watch what happens after the next iteration of memory:
+	block 1 | unused
+	block 2 | taken
+	block 3 | unused
+	block 4 | taken
+	block 5 | unused
 
-	block 1 | cat 11 (free)
-	block 2 | cat 2
-	block 3 | cat 12 (free)
-	block 4	| cat 4
-	block 5 | cat 13
-	block 6 | cat 6
-	block 7 | cat 14 
-	block 8 | cat 15 (free)
-	block 9 | cat 16
-	block 10| cat 10
+Then you request a block, so it needs to free the memory. If the tracing collector has compacting, and detects that it'd be helpful (ie the blocks are small enough) it could move the existing blocks around to make it look like this:
 
-Since the cats can only overwrite the freed blocks, they go to all those blocks (and some of them get freed for being not liked by the user). If we continue we may get something like this:
+	block 1 | taken
+	block 2 | taken
+	block 3 | free
+	block 4 | free
+	block 5 | free
 
-	block 1 | cat 17
-	block 2 | cat 2
-	block 3 | cat 20
-	block 4	| cat 4
-	block 5 | cat 13
-	block 6 | cat 6
-	block 7 | cat 14 
-	block 8 | cat 19
-	block 9 | cat 16
-	block 10| cat 10
+Now when you get the next 3 blocks, they will be all in a row, and you're application might get a noticeable speed up.
 
-And our array would look like:
+###Reference counting can't use bump pointer allocation
 
-	[2, 4, 6, 10, 13, 14, 16, 17 19, 20]
+Wow that's a lot of big words there. So what is bump pointer allocation?
 
-You probably notice now that the memory and our array have pretty much a completely different order. This means that when we access the cats, there is basically 0 chance that the next cat will already be in the cache. How might tracing deal with this problem?
+###Reference Counting does more work
+
+This is probably the simplest to validate and explain. Basically consider the amount of work that happens to your objects over the scope of their lifetime. Every object has to be created, so the memory manager must find some location in memory of the right size (we've seen tracing collectors can be faster with this, but let's assume they take the same speed). Then every object must be freed, which involves telling the memory manager it's free to use it. This is usually not very expensive, but dep
