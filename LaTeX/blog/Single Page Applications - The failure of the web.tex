@@ -1,0 +1,52 @@
+\documentclass{article}[10pt]
+
+\newcommand{\spa}{Single Page Application}
+
+\title{Single Page Applications - The failure of the web}
+
+\author{Nathan Jervis}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Background}
+
+The web in the current age is hailed as the platform that exists everywhere. If you need an application to work everywhere, and not worry about rewriting your application to support new platforms, you generally choose the browser as your targetted platform. This is enhanced even more by mobile frameworks which execute web based code within the application, and provide access to mobile phone features from within the app\footnote{Phonegap is one of the many frameworks which allow you to do this}.
+
+The only problem is navigating to new pages requires loading the page from the server, constructing a DOM\footnote{Document Object Model - A tree which represents the HTML document and allows access to it} and downloading styles and images. While web browsers are becoming faster, this still takes a noticeable amount of time, especially on a slow internet connection.
+
+\spa s solve this problem by downloading the entire website all in one go. Clicking on a link no longer requires fetching any html or styles, and the DOM is already built. Applications such as G-Mail\cite{gmail} are built completely upon this concept, and it gives them the feel of a native application.
+
+
+\section{Why is SPA needed?}
+
+If we look at Table \ref{table:requestLength}\cite{posa} we can see that a typical request takes about 470ms. This is just to load the content, and doesn't include the time the client needs to parse the page, construct the DOM and determine the styling.
+\begin{table}{h!}
+\begin{tabular}{|c|c|c|}
+\hline
+Action & Time Taken & Notes \\\hline
+DNS & 50ms\\\hline
+TCP handshake & 80ms & 1 round-trip\\\hline
+SSL handshake & 160ms & 2 round-trips\\\hline
+Request to Server & 40ms\\\hline
+Server Processing & 100ms\\\hline
+Reponse from Server & 40ms\\\hline
+Total & 470ms\\\hline
+\end{tabular}
+\caption{Time taken for a typical web request}
+\label{table:requestLength}
+\end{table}
+
+Obviously this is a problem for applications since half a second is a long time to wait when the user clicks a button. SPA's avoid in 2 ways.
+
+\subsection{Pre-loaded Structure}
+
+
+
+
+%\footnote{http://aosabook.org/en/posa/high-performance-networking-in-chrome.html}
+
+\end{document}
