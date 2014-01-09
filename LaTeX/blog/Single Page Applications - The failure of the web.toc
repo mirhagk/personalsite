@@ -1,2 +1,8 @@
 \contentsline {section}{\numberline {1}Background}{1}
-\contentsline {section}{\numberline {2}Why is SPA needed?}{1}
+\contentsline {section}{\numberline {2}Why is SPA needed?}{2}
+\contentsline {subsection}{\numberline {2.1}Remove overhead}{2}
+\contentsline {subsection}{\numberline {2.2}Pre-loaded Structure}{3}
+\contentsline {section}{\numberline {3}SPDY - Protocol}{3}
+\contentsline {section}{\numberline {4}SPDY - Multi-Page Applications}{3}
+\contentsline {subsection}{\numberline {4.1}HTML include}{3}
+\contentsline {subsection}{\numberline {4.2}Multi-Page Applications}{4}
