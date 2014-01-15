@@ -131,6 +131,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <None Include="Content\blog\Why is Tracing Garbage Collection Faster than Reference Counting.md" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\js\menu.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
