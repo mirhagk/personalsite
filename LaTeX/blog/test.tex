@@ -1,0 +1,17 @@
+\documentclass{article}[10pt]
+
+\usepackage{textcomp }
+
+\newcommand{\openTag}[1]{\textlangle #1 \textrangle}
+\newcommand{\closeTag}[1]{\textlangle /#1 \textrangle}
+\newcommand{\tag}[2]{\openTag{#1}#2\closeTag{#1}}
+
+\newcommand{\htmlSection}[1]{\tag{h1}{#1}}
+
+
+\begin{document}
+
+
+\htmlSection{Hello world}
+
+\end{document}

@@ -1,0 +1,422 @@
+Similarity Analyser 2.3.35 - http://www.harukizaemon.com/simian
+Copyright (c) 2003-2013 Simon Harris.  All rights reserved.
+Simian is not free unless used solely for non-commercial or evaluation purposes.
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="simian.xsl" type="text/xsl"?>
+<simian version="2.3.35">
+    <check failOnDuplication="true" ignoreCharacterCase="true" ignoreCurlyBraces="true" ignoreIdentifierCase="true" ignoreModifiers="true" ignoreStringCase="true" threshold="6">
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\ast.js" startLineNumber="179" endLineNumber="185"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\ast.js" startLineNumber="135" endLineNumber="141"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="379" endLineNumber="385"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="344" endLineNumber="350"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\Makefile.dryice.js" startLineNumber="107" endLineNumber="112"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\Makefile.dryice.js" startLineNumber="82" endLineNumber="87"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="347" endLineNumber="352"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="205" endLineNumber="210"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="347" endLineNumber="352"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\boolean_single.js" startLineNumber="1" endLineNumber="7"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\boolean_single.js" startLineNumber="1" endLineNumber="7"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\index.js" startLineNumber="105" endLineNumber="111"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="363" endLineNumber="369"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="53" endLineNumber="61"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="954" endLineNumber="962"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\default_singles.js" startLineNumber="1" endLineNumber="7"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\default_singles.js" startLineNumber="1" endLineNumber="7"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="295" endLineNumber="300"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="269" endLineNumber="274"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\xup.js" startLineNumber="1" endLineNumber="8"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\xup.js" startLineNumber="1" endLineNumber="8"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\divide.js" startLineNumber="1" endLineNumber="8"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\divide.js" startLineNumber="1" endLineNumber="8"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-node.js" startLineNumber="7" endLineNumber="14"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="7" endLineNumber="14"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\conditionals.js" startLineNumber="32" endLineNumber="37"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\conditionals.js" startLineNumber="24" endLineNumber="29"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\drop-unused.js" startLineNumber="112" endLineNumber="117"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\drop-unused.js" startLineNumber="102" endLineNumber="107"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="309" endLineNumber="314"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="191" endLineNumber="196"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="309" endLineNumber="314"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\parse.js" startLineNumber="1221" endLineNumber="1226"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\parse.js" startLineNumber="1212" endLineNumber="1217"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="189" endLineNumber="194"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="140" endLineNumber="146"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="151" endLineNumber="157"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="132" endLineNumber="139"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="371" endLineNumber="377"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="336" endLineNumber="342"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\boolean_double.js" startLineNumber="1" endLineNumber="7"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\boolean_double.js" startLineNumber="1" endLineNumber="7"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="104" endLineNumber="111"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="87" endLineNumber="93"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="62" endLineNumber="68"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="47" endLineNumber="53"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="34" endLineNumber="40"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\ast.js" startLineNumber="475" endLineNumber="480"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\ast.js" startLineNumber="454" endLineNumber="459"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="58" endLineNumber="64"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="132" endLineNumber="138"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\compress.js" startLineNumber="2071" endLineNumber="2076"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\compress.js" startLineNumber="2038" endLineNumber="2043"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\properties.js" startLineNumber="40" endLineNumber="45"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\properties.js" startLineNumber="17" endLineNumber="22"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="363" endLineNumber="369"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="328" endLineNumber="334"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\short.js" startLineNumber="60" endLineNumber="67"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\short.js" startLineNumber="49" endLineNumber="56"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\test\integration\node-static-test.js" startLineNumber="219" endLineNumber="224"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\test\integration\node-static-test.js" startLineNumber="129" endLineNumber="134"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\test\integration\node-static-test.js" startLineNumber="117" endLineNumber="122"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="298" endLineNumber="304"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="181" endLineNumber="187"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="298" endLineNumber="304"/>
+        </set>
+        <set lineCount="6">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\labels.js" startLineNumber="73" endLineNumber="79"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\labels.js" startLineNumber="63" endLineNumber="69"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\test\integration\node-static-test.js" startLineNumber="117" endLineNumber="125"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\test\integration\node-static-test.js" startLineNumber="129" endLineNumber="137"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\issue-59.js" startLineNumber="7" endLineNumber="15"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\issue-59.js" startLineNumber="19" endLineNumber="27"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="950" endLineNumber="956"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="1048" endLineNumber="1054"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\compress.js" startLineNumber="318" endLineNumber="325"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\compress.js" startLineNumber="340" endLineNumber="347"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\lib\source-map\util.js" startLineNumber="135" endLineNumber="145"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\lib\source-map\util.js" startLineNumber="186" endLineNumber="196"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="53" endLineNumber="61"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="74" endLineNumber="82"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="170" endLineNumber="178"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\negate-iife.js" startLineNumber="44" endLineNumber="51"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\negate-iife.js" startLineNumber="67" endLineNumber="74"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="49" endLineNumber="55"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="147" endLineNumber="153"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="195" endLineNumber="203"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="172" endLineNumber="180"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\parse.js" startLineNumber="1247" endLineNumber="1253"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\lib\parse.js" startLineNumber="1261" endLineNumber="1267"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="109" endLineNumber="116"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="132" endLineNumber="139"/>
+        </set>
+        <set lineCount="7">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\bliss.js" startLineNumber="29" endLineNumber="35"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="1112" endLineNumber="1118"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="3" endLineNumber="20"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="2" endLineNumber="19"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="62" endLineNumber="70"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="47" endLineNumber="55"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\bool.js" startLineNumber="1" endLineNumber="10"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\bool.js" startLineNumber="1" endLineNumber="10"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="42" endLineNumber="49"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="943" endLineNumber="950"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-node.js" startLineNumber="347" endLineNumber="354"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-node.js" startLineNumber="323" endLineNumber="330"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="126" endLineNumber="133"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="97" endLineNumber="104"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="251" endLineNumber="259"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="231" endLineNumber="240"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="237" endLineNumber="245"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="380" endLineNumber="388"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="380" endLineNumber="388"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-node.js" startLineNumber="214" endLineNumber="222"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-node.js" startLineNumber="196" endLineNumber="204"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="402" endLineNumber="411"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="402" endLineNumber="411"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="256" endLineNumber="264"/>
+        </set>
+        <set lineCount="8">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\colors\themes\winston-dark.js" startLineNumber="4" endLineNumber="11"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\colors\themes\winston-light.js" startLineNumber="4" endLineNumber="11"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\colors\example.js" startLineNumber="54" endLineNumber="61"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="212" endLineNumber="221"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="354" endLineNumber="363"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="354" endLineNumber="363"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="207" endLineNumber="219"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="188" endLineNumber="200"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="157" endLineNumber="166"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="273" endLineNumber="282"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="273" endLineNumber="282"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="260" endLineNumber="270"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="241" endLineNumber="251"/>
+        </set>
+        <set lineCount="9">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="176" endLineNumber="184"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-consumer.js" startLineNumber="214" endLineNumber="222"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\colors\themes\winston-light.js" startLineNumber="2" endLineNumber="11"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\colors\example.js" startLineNumber="52" endLineNumber="61"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="561" endLineNumber="571"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="521" endLineNumber="531"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\index.js" startLineNumber="118" endLineNumber="132"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="377" endLineNumber="391"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\wordwrap\example\center.js" startLineNumber="1" endLineNumber="10"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\node_modules\wordwrap\example\center.js" startLineNumber="1" endLineNumber="10"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="181" endLineNumber="190"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\source-map\test\source-map\test-source-map-generator.js" startLineNumber="98" endLineNumber="108"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="302" endLineNumber="312"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="276" endLineNumber="286"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="71" endLineNumber="82"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="50" endLineNumber="61"/>
+        </set>
+        <set lineCount="10">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="547" endLineNumber="559"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\async\lib\async.js" startLineNumber="507" endLineNumber="519"/>
+        </set>
+        <set lineCount="11">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="105" endLineNumber="118"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\test\compress\switch.js" startLineNumber="139" endLineNumber="152"/>
+        </set>
+        <set lineCount="11">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="142" endLineNumber="158"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="123" endLineNumber="139"/>
+        </set>
+        <set lineCount="13">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="461" endLineNumber="476"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\index.js" startLineNumber="166" endLineNumber="181"/>
+        </set>
+        <set lineCount="14">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="22" endLineNumber="38"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="21" endLineNumber="37"/>
+        </set>
+        <set lineCount="15">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\usage-options.js" startLineNumber="1" endLineNumber="19"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\usage-options.js" startLineNumber="1" endLineNumber="19"/>
+        </set>
+        <set lineCount="16">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\line_count.js" startLineNumber="1" endLineNumber="20"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\line_count.js" startLineNumber="1" endLineNumber="20"/>
+        </set>
+        <set lineCount="17">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\test\parse.js" startLineNumber="21" endLineNumber="38"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="135" endLineNumber="152"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="135" endLineNumber="152"/>
+        </set>
+        <set lineCount="17">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\bliss.js" startLineNumber="5" endLineNumber="27"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="1088" endLineNumber="1110"/>
+        </set>
+        <set lineCount="20">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="254" endLineNumber="281"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="273" endLineNumber="300"/>
+        </set>
+        <set lineCount="21">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\node_modules\wordwrap\test\break.js" startLineNumber="1" endLineNumber="29"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\wordwrap\test\break.js" startLineNumber="1" endLineNumber="29"/>
+        </set>
+        <set lineCount="22">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\minimist\index.js" startLineNumber="56" endLineNumber="84"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="334" endLineNumber="362"/>
+        </set>
+        <set lineCount="22">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="151" endLineNumber="184"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="1052" endLineNumber="1085"/>
+        </set>
+        <set lineCount="23">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\node_modules\wordwrap\test\wrap.js" startLineNumber="1" endLineNumber="30"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\wordwrap\test\wrap.js" startLineNumber="1" endLineNumber="30"/>
+        </set>
+        <set lineCount="25">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\line_count_wrap.js" startLineNumber="1" endLineNumber="29"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\line_count_wrap.js" startLineNumber="1" endLineNumber="29"/>
+        </set>
+        <set lineCount="25">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser-tail.js" startLineNumber="3" endLineNumber="33"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="1237" endLineNumber="1267"/>
+        </set>
+        <set lineCount="25">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\example\line_count_options.js" startLineNumber="1" endLineNumber="29"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\example\line_count_options.js" startLineNumber="1" endLineNumber="29"/>
+        </set>
+        <set lineCount="25">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="221" endLineNumber="255"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="202" endLineNumber="236"/>
+        </set>
+        <set lineCount="25">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="905" endLineNumber="941"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="4" endLineNumber="40"/>
+        </set>
+        <set lineCount="29">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="84" endLineNumber="128"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="79" endLineNumber="123"/>
+        </set>
+        <set lineCount="29">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="162" endLineNumber="205"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="143" endLineNumber="186"/>
+        </set>
+        <set lineCount="34">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\index.js" startLineNumber="290" endLineNumber="342"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\index.js" startLineNumber="406" endLineNumber="458"/>
+        </set>
+        <set lineCount="43">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="10" endLineNumber="83"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\validation.js" startLineNumber="6" endLineNumber="79"/>
+        </set>
+        <set lineCount="52">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\_.js" startLineNumber="1" endLineNumber="69"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\_.js" startLineNumber="1" endLineNumber="69"/>
+        </set>
+        <set lineCount="53">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\node_modules\wordwrap\index.js" startLineNumber="1" endLineNumber="75"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\node_modules\wordwrap\index.js" startLineNumber="1" endLineNumber="75"/>
+        </set>
+        <set lineCount="63">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="964" endLineNumber="1043"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\writer.js" startLineNumber="63" endLineNumber="142"/>
+        </set>
+        <set lineCount="89">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\bliss.js" startLineNumber="37" endLineNumber="151"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="1120" endLineNumber="1234"/>
+        </set>
+        <set lineCount="105">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\html-minifier\dist\all.js" startLineNumber="814" endLineNumber="955"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\html-minifier\src\htmllint.js" startLineNumber="9" endLineNumber="150"/>
+        </set>
+        <set lineCount="179">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="87" endLineNumber="417"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\tags.js" startLineNumber="6" endLineNumber="336"/>
+        </set>
+        <set lineCount="208">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\html-minifier\src\htmlparser.js" startLineNumber="27" endLineNumber="366"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\html-minifier\dist\all.js" startLineNumber="27" endLineNumber="366"/>
+        </set>
+        <set lineCount="251">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\usage.js" startLineNumber="1" endLineNumber="290"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\usage.js" startLineNumber="1" endLineNumber="290"/>
+        </set>
+        <set lineCount="275">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\html-minifier\dist\all.js" startLineNumber="376" endLineNumber="805"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\html-minifier\src\htmlminifier.js" startLineNumber="10" endLineNumber="439"/>
+        </set>
+        <set lineCount="366">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\tokenizer.js" startLineNumber="4" endLineNumber="485"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\lib\browser.js" startLineNumber="421" endLineNumber="902"/>
+        </set>
+        <set lineCount="371">
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\bliss\node_modules\uglify-js\node_modules\optimist\test\parse.js" startLineNumber="1" endLineNumber="446"/>
+            <block sourceFile="C:\Users\nathan\Documents\GitHub\personalsite\website\node_modules\node-static\node_modules\optimist\test\parse.js" startLineNumber="1" endLineNumber="446"/>
+        </set>
+        <summary duplicateFileCount="70" duplicateLineCount="5858" duplicateBlockCount="188" totalFileCount="156" totalRawLineCount="24674" totalSignificantLineCount="17122" processingTime="3046"/>
+    </check>
+</simian>
