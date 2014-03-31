@@ -14,3 +14,19 @@ will appear formatted in math mode inline. If you change that to
 	\[	1 + 1 = 2 \]
 
 Then it does a similar thing, but it actually uses an equation mode, which will put it on it's own line and number it (so you can refer to it later).
+
+Of course you can make much more interesting mathematical equations, such as:
+
+	$3^{2} = 9$
+
+(3 to the power of 2 equals 9).
+
+Whatever you put inside the `{}` will be rendered as superscript. This is neat, but just scratches the surface. You can use subscripts as well:
+
+	$x_{i}$
+
+You can also chain them together, check out this:
+
+	$3^{2}^{2} = 81$
+
+ded
