@@ -14,4 +14,4 @@ Each SPA is slightly different in how it operates, but there are common features
 
 ###Routing
 
-Many SPAs implement routing, implemented as modifying the url after the `#` to move around on the same page. Usually travelling to this link fires off an event, and the SPA library takes over and renders the content for you instead.
+Many SPAs implement routing, implemented as modifying the url after the `#` to move around on the same page. Usually travelling to this link fires off an event, and the SPA library takes over and renders the content for you instead. Routing is required in order to allow linking and navigation using the back and forward buttons, 2 of the most important features of the web.
