@@ -13,10 +13,6 @@
 			Title: 'Why is Tracing Garbage Collection faster than Reference Counting?',
 			Url: 'Why is Tracing Garbage Collection faster than Reference Counting',
 			Debug: true
-		},
-		{
-			Title: 'Purity in Haskell is a lie',
-			Url: 'Purity in Haskell is a lie' 
 		}
 	]
 }
