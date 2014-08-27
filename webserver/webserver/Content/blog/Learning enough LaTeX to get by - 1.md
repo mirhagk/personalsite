@@ -86,7 +86,9 @@ LaTeX rules
 
 So first thing's first. There are a few rules:
 
-1. Whitespace doesn't really matter. If you were to write `Hello                       World!` it would still only have 1 space in the output. This is similar to HTML and markdown. In order to get a new line you actually need to have an empty line between paragraphs. You can also use the `\\` command, which inserts a newline.
+1. Whitespace doesn't really matter. If you were to write 
+ <code>Hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;World!</code> 
+ it would still only have 1 space in the output. This is similar to HTML and markdown. In order to get a new line you actually need to have an empty line between paragraphs. You can also use the `\\` command, which inserts a newline.
 1. Certain symbols are special in LaTeX, in order to use the actual symbol (for symbols like %, $, and &) you need to escape it with a backslash like so `\% \$ \&`
 1. LaTeX should always be written with the macro, `\LaTeX` so that it's formatted nicely. This isn't actually a rule, but you should still do it.
 

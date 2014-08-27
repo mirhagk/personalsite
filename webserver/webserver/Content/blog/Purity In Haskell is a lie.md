@@ -7,7 +7,7 @@ And it's great while you're working with it. Every time you call a function with
 
 Since there's no side effects of functions, you could have multiple threads and not have to worry about the threads negatively impacting each other. They could just automatically work, and Haskell could just turn on multi-threading on programs that never were written for multi-threading.
 
-Life seems so great, and you're happy that now we have a language that ensures perfect safety and purity, even if no-one really "gets" how to program in it.
+Life seems so great, and you're happy that now we have a language that ensures perfect safety and purity, even if few people really "get" how to program in it.
 
 Side Effects are Required
 ---
@@ -41,7 +41,7 @@ But how exactly does it protect you? Well Haskell talks about monads and functor
 
 See in Haskell, you can easily write functions that work on very generic inputs, and this generalization of everything seems to spill over into discussions of the language. When concepts like `IO` are explained, they are explained with monads in general, but that's not really required.
 
-If you've ever worked in SQL, you should be familiar with semantics of `NULL` in that language. `NULL` and anything equals `NULL`. Whatever you do with `NULL`, the result ends up as `NULL`.
+If you've ever worked in SQL, you should be familiar with semantics of `NULL` in that language. `NULL` and anything equals `NULL`. Whatever you do with `NULL`, the result ends up as `NULL`. [^1]
 
 This is the same as the `Maybe` monad in haskell. In fact they are nearly identical. If you were to write the logic for SQL's `NULL` in C# it'd be something like:
 
@@ -62,7 +62,7 @@ DoFunction (Nothing) = Nothing
 DoFunction (Just x) fx = fx x
 ~~~
 
-The Haskell function is pretty much the same, just with the convience of not needing a whole lot of type casts.
+The Haskell function is pretty much the same, just with the convience of not needing a whole lot of type casts. [^2]
 
 Making `IO` monad
 ---
@@ -103,12 +103,12 @@ class IO<T>
 }
 ~~~
 
-This would provide roughly the equiavelent functionality of the Haskell `IO` monad. Let's now pretend that C# returned this value from `Console.ReadLine();`. Now we want to take a string from the user, and upper case it
+This would provide roughly the equivalent functionality of the Haskell `IO` monad. Let's now pretend that C# returned this value from `Console.ReadLine();`. Now we want to take a string from the user, and upper case it
 
 ~~~
 var value = Console.ReadLine();
-value.DoFunction(v=>v.ToUpperCase());
-Console.WriteLine(value);
+var upper = value.DoFunction(v=>v.ToUpperCase());
+Console.WriteLine(upper);
 ~~~
 
 That's pretty close to what you would do in Haskell. The benefit of `Console.ReadLine()` returning this `IO<string>` instead of just a `string` is that if you returned it from the function, everyone would know you got it from impure source, and it'd mark that as a "dirty" string. In fact many people have recommended doing something like this with user input.
@@ -116,7 +116,7 @@ That's pretty close to what you would do in Haskell. The benefit of `Console.Rea
 Seeing behind the curtain
 ---
 
-Of course it's really just a facade, if you really wanted to, you could get around the class. I've written one way here using reflection:
+Of course it's really just a facade, if you really wanted to, you could get around the C# class. I've written one way here using reflection:
 
 ~~~
 T EscapeIO<T>(IO<T> wrapped)
@@ -125,7 +125,7 @@ T EscapeIO<T>(IO<T> wrapped)
 }
 ~~~
 
-So know that safety has gone away. Of course you should never write code like the above, but there's nothing preventing you from doing it, it just makes it a bit more difficult, in the hopes you **won't** do it.
+So that safety goes away for evil users. Of course you should never write code like the above, but there's nothing fundamentally preventing you from doing it, it just makes it a bit more difficult, in the hopes you **won't** do it.
 
 It's the same in haskell, except they already provide the function for you, `unsafePerformIO`. Clearly you should never use that function, it even has "unsafe" in it's name. But does it really stop me from writing?
 
@@ -133,28 +133,23 @@ It's the same in haskell, except they already provide the function for you, `uns
 let getLineAwesome = unsafePerformIO getLine
 ~~~ 
 
-The truth is, if you use a library, it could in fact be doing something very similar to the above. There's no way to know for sure that the person you're calling is truly a pure function, you just have to hope that they don't something like the above.
+The truth is, if you use a library, it could in fact be doing something very similar to the above. There's no way to know for sure that the person you're calling is truly a pure function, you just have to hope that they are neither dumb nor evil enough to do this.
+
+(The above function is quite fun to experiment with because haskell assumes purity, it will cache the value sometimes, which could create all sorts of undefined programs)
 
 Why haven't I heard of this yet?
 ---
 
 This seems to be like a big deal. It seems like this should be a common problem (calling a function you expect to be pure, but isn't). So why isn't it?
 
-My guess (and this is pure conjecture) is that script kiddies haven't migrated to it yet. PHP is awful not because of fundamental problems with the language[^1], but because of "programmers" who decided that proper programming practice is just too much work, and code should just do what it wants.
+My guess (and this is pure conjecture) is that script kiddies haven't migrated to it yet. PHP is awful not because of fundamental problems with the language[^3], but because of "programmers" who decided that proper programming practice is just too much work, and code should just do what it wants.[^4]
 
 You don't see problems with `unsafePerformIO` because Haskell programmers love purity too much to abuse this function. It's a close guarded secret, stackoverflow questions on "How do I convert IO String to String" get answered with "Well you could do it, but we won't tell you how. Instead do things the right way&trade;".
 
 If Haskell gets more popular, then maybe someone will answer with "just use `unsafePerformIO`". That will be the day when all safety in Haskell dies, and this beautiful flower of a language will be transformed into yet another awful unsafe language.
 
 
-[^1]: Well maybe a little bit.
-
-SELECT CASE transaction_isolation_level 
-WHEN 0 THEN 'Unspecified' 
-WHEN 1 THEN 'ReadUncommitted' 
-WHEN 2 THEN 'ReadCommitted' 
-WHEN 3 THEN 'Repeatable' 
-WHEN 4 THEN 'Serializable' 
-WHEN 5 THEN 'Snapshot' END AS TRANSACTION_ISOLATION_LEVEL 
-FROM sys.dm_exec_sessions 
-where session_id = @@SPID
+[^1]: There are some exceptions to this in SQL, which is a language full of exceptional behaviour
+[^2]: Haskell really excels at very rarely needing to tell the compiler what types you're using
+[^3]: Well maybe a little bit.
+[^4]: This is evident in questions like [this](http://stackoverflow.com/questions/17220285/php-mysql-fpdf-and-get) where the first answer just gives the user the bare minimum they need to get running, completely ignoring the fact that this is very prone to SQL injection.
