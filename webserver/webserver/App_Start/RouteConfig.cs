@@ -21,6 +21,11 @@ namespace webserver
                 "sitemap.xml",
                 new { controller = "Meta", action = "Sitemap" });
             routes.MapRoute(
+                "Partials",
+                "Partial/{action}/{origController}/{origAction}/{id}",
+                defaults: new { controller = "Partial", action = "Render", id = UrlParameter.Optional }
+                );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

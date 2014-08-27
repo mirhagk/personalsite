@@ -119,6 +119,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MetaController.cs" />
     <Compile Include="Controllers\PageHelper.cs" />
+    <Compile Include="Controllers\PartialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,9 +142,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\PartialLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

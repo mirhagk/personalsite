@@ -1,7 +1,7 @@
 ﻿@model webserver.Models.BlogModel
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Layout.cshtml";
+    Layout = ViewBag.AlternateLayout ?? "~/Views/Layout.cshtml";
 }
 
 <div class="header">
