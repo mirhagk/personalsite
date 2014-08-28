@@ -12,16 +12,31 @@ namespace webserver.Controllers
         //
         // GET: /Partial/
 
-        public ContentResult Render(string origController, string origAction, string id)
+        public ActionResult Render(string origController, string origAction, string id)
         {
-            var controller = new HomeController();
-            controller.ControllerContext = this.ControllerContext;
-            this.ControllerContext.Controller = controller;
-            //System.Web.Mvc.ContentResult
-            //return PartialView(String.Format("~/Views/{0}/{1}.cshtml", origController, origAction));
-            string partial = RenderPartialViewToString(String.Format("~/Views/{0}/{1}.cshtml", origController, origAction),null);
-            return new ContentResult() { Content = partial, ContentType = "text/html", ContentEncoding = System.Text.Encoding.UTF8 };
-            //return System.Web.Mvc.
+            origController = origController.ToLowerInvariant();
+            origAction = (origAction ?? "index").ToLowerInvariant();
+
+            var controllerType= System.Reflection.Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(t => t.Name.ToLowerInvariant() == origController + "controller");
+            if (controllerType != null)
+            {
+
+                var controller = controllerType.GetConstructor(new Type[] { }).Invoke(new object[] { }) as Controller;
+                controller.ControllerContext = this.ControllerContext;
+                controller.Url = this.Url;
+                this.ControllerContext.Controller = controller;
+
+                var result = controller.GetType().GetMethods().Single(m => m.Name.ToLowerInvariant() == origAction).Invoke(controller, new object[] { });
+                if (result is ViewResult)
+                {
+                    ViewBag.AlternateLayout = "~/Views/PartialLayout.cshtml";
+                    return View(String.Format("~/Views/{0}/{1}.cshtml", origController, origAction), (result as ViewResult).Model);
+                }
+                return result as ActionResult;
+            }
+            throw new HttpException(400, "Could not render the partial page");
+            //If we couldn't figure out routing, just send it back to the regular router
+            return RedirectToAction(origAction, origController, new { id = id });
         }
         protected string RenderPartialViewToString(string viewName, object model)
         {

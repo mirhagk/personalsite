@@ -11,7 +11,7 @@ namespace webserver.Controllers
         //
         // GET: /Home/
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }

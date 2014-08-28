@@ -23,7 +23,7 @@ namespace webserver
             routes.MapRoute(
                 "Partials",
                 "Partial/{action}/{origController}/{origAction}/{id}",
-                defaults: new { controller = "Partial", action = "Render", id = UrlParameter.Optional }
+                defaults: new { controller = "Partial", action = "Render", id = UrlParameter.Optional, origAction = UrlParameter.Optional }
                 );
             routes.MapRoute(
                 name: "Default",
