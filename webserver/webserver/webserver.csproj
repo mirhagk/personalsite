@@ -134,6 +134,7 @@
     <Content Include="Content\css\main.css" />
     <Content Include="Content\js\menu.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\PartialRenderer.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -146,7 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
