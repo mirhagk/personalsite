@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace webserver.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : LayoutController
     {
         //
         // GET: /Blog/

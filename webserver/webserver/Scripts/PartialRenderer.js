@@ -21,7 +21,8 @@ renderPartial = function (src, e, evt) {
     history.pushState(null, null, src);
 
     var request = new XMLHttpRequest();
-    request.open("GET", "/Partial/Render"+src, false);
+    request.open("GET", src + "?partial=true", false);
+    //request.open("GET", "/Partial/Render"+src, false);
     request.onload = function () {
         //if the result was not successful
         if (this.status != 200) {

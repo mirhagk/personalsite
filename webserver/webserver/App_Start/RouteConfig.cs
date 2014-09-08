@@ -20,11 +20,12 @@ namespace webserver
             routes.MapRoute("Sitemap.xml",
                 "sitemap.xml",
                 new { controller = "Meta", action = "Sitemap" });
-            routes.MapRoute(
+            /*routes.MapRoute(
                 "Partials",
                 "Partial/{action}/{origController}/{origAction}/{id}",
                 defaults: new { controller = "Partial", action = "Render", id = UrlParameter.Optional, origAction = UrlParameter.Optional }
-                );
+                );*/
+            routes.MapRoute("Partials", "Partial/Render/{controller}/{action}", new { controller = "Home", action = "Index", Partial = true });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
