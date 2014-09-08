@@ -1,7 +1,11 @@
-﻿window.addEventListener('load', function () {
+﻿var load_event = document.createEvent("HTMLEvents");
+load_event.initEvent("load", true, true);
+window.addEventListener('load', function () {
     var links = Array.prototype.slice.call(document.getElementsByTagName("a"));
     links
         .filter(function (x) {
+            if (x.linkSrc)//if it's already been processed, skip it
+                return false;
             x.linkSrc = x.attributes.href.value;
             return x.linkSrc.length > 0 && x.linkSrc[0] == "/";
         })
@@ -27,6 +31,7 @@ renderPartial = function (src, e, evt) {
             return;
         }
         document.getElementById('main').innerHTML = this.responseText;
+        window.dispatchEvent(load_event);
     }
     request.onerror = function () {
         window.location.href = src;
