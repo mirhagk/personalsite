@@ -1,6 +1,5 @@
 ﻿@{
     ViewBag.Title = "post";
-    Layout = ViewBag.AlternateLayout ?? "~/Views/Layout.cshtml";
 }
 <div class="header">
     <h1>@Model.Title</h1>
@@ -12,22 +11,22 @@
     <div>@Html.Raw(Model.BlogPost)</div>
     <div class="pure-g-r">
         <div class="pure-u-1-4">
-            <a href="/blog/first">First Post</a>
+            <a href="@(Request.ApplicationPath+"/blog/first")">First Post</a>
         </div>
         <div class="pure-u-1-4">
             @if (Model.Previous != null)
             {
-                <a href="/blog/@Model.Previous">Previous Post</a>
+                <a href="@(Request.ApplicationPath+"/blog/"+Model.Previous)">Previous Post</a>
             }
         </div>
         <div class="pure-u-1-4" style="text-align:right;">
             @if (Model.Next != null)
             {
-                <a href="/blog/@Model.Next">Next Post</a>
+                <a href="@(Request.ApplicationPath+"/blog/"+@Model.Next)">Next Post</a>
             }
         </div>
         <div class="pure-u-1-4" style="text-align:right;">
-            <a href="/blog/last">Last Post</a>
+            <a href="@(Request.ApplicationPath+"/blog/last")">Last Post</a>
         </div>
     </div>
     <!-- begin htmlcommentbox.com -->

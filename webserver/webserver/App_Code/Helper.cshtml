@@ -12,7 +12,7 @@
     }
     private static string GetURL(string page)
     {
-        return "/Home/" + GetPage(page);
+        return Request.ApplicationPath+ "/Home/" + GetPage(page);
     }
 }
 @helper Heading(string text)

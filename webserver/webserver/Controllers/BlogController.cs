@@ -12,7 +12,7 @@ namespace webserver.Controllers
         // GET: /Blog/
         private Models.BlogConfig LoadConfig()
         {
-            var config = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.BlogConfig>(GetTextFromPath("/Content/Blog/blog_config.json"));
+            var config = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.BlogConfig>(GetTextFromPath("~/Content/Blog/blog_config.json"));
             //if (!System.Diagnostics.Debugger.IsAttached)
 #if !DEBUG
                 config.Posts = config.Posts.Where((x) => !x.Debug).ToArray();
@@ -26,7 +26,7 @@ namespace webserver.Controllers
         private string GetBlogContent(string url)
         {
             var mdProcessor = new MarkdownSharp.Markdown();
-            return mdProcessor.Transform(GetTextFromPath("/Content/Blog/" + url+".md"));
+            return mdProcessor.Transform(GetTextFromPath("~/Content/Blog/" + url+".md"));
         }
         private int IndexOfPost(Models.BlogConfig.Post[] posts, string url)
         {
