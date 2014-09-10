@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace webserver.Controllers
 {
@@ -36,6 +37,12 @@ namespace webserver.Controllers
                     return i;
             }
             return -1;
+        }
+        protected override RedirectToRouteResult RedirectToAction(string actionName, string controllerName, RouteValueDictionary routeValues)
+        {
+            if (Request.Params["Partial"] != null)
+                routeValues.Add("Partial", Request.Params["Partial"]);
+            return base.RedirectToAction(actionName, controllerName, routeValues);
         }
         public ActionResult Index()
         {
