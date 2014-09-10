@@ -10,10 +10,6 @@ namespace webserver.Controllers
     {
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (Request.Params["Partial"] != null)
-            {
-                ViewBag.AlternateLayout = "~/Views/PartialLayout.cshtml";
-            }
             base.OnActionExecuting(filterContext);
         }
 

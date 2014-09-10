@@ -1,0 +1,10 @@
+﻿@{ 
+    if (Request.Params["Partial"] != null)
+    {
+        Layout = "~/Views/PartialLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Layout.cshtml";
+    }
+}
