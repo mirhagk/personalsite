@@ -26,7 +26,7 @@
                     @Helper.NavPage("Education")
                     @Helper.NavPage("About")
                     <li><a href="mailto://nathan@nathanjervis.com?subject=Contact%20Me">Contact</a></li>
-                    <li class="menu-item-divided"><a href="@(Request.ApplicationPath+"/blog")">Blog</a></li>
+                    <li class="menu-item-divided"><a href="@Helper.GetAbsURL("/blog")">Blog</a></li>
                 </ul>
             </div>
         </div>

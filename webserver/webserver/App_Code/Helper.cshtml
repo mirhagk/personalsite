@@ -10,9 +10,13 @@
             return "index";
         return page;
     }
+    public static string GetAbsURL(string url)
+    {
+        return (Request.ApplicationPath.TrimEnd('/') + url);
+    }
     private static string GetURL(string page)
     {
-        return Request.ApplicationPath+ "/Home/" + GetPage(page);
+        return GetAbsURL("/Home/" + GetPage(page));
     }
 }
 @helper Heading(string text)

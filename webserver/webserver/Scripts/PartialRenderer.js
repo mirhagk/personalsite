@@ -23,7 +23,6 @@ renderPartial = function (src, e, evt) {
     var request = new XMLHttpRequest();
     var link = src + ((src.indexOf("?") == -1) ? "?" : "&") + "partial=true";
     request.open("GET", link, false);
-    //request.open("GET", "/Partial/Render"+src, false);
     request.onload = function () {
         //if the result was not successful
         if (this.status != 200) {
