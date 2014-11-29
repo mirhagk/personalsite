@@ -14,15 +14,6 @@ Static Typing
 ---
 
 This is probably the most confused concept. Static typing refers to compile time type checking. This means errors about mismatched types will be reported during development/compilation. 
-
-/*But statically typed code can statically check the types without reporting any sort of type errors. This is done with implicit casts. Consider the following `C` snippet:
-	
-	char text[] = "Hello world";
-	long let = 33.9;
-	text[0] = let;
-	printf(text);
-
-Here you're assigning a floating point number to a long, then assigning that to an element of a string. Most would consider that fairly nonsensical, yet it's still statically typed since the compiler knows all the types involved at compile time, and generates the implicit casts. (here from `double` to `long` then from `long` to `char`)*/
   
 Different people have different ideas about what it takes for a language to be considered statically typed, but an entire language doesn't necessarily have to be statically or dynamically typed.
 
