@@ -18,10 +18,13 @@
     {
         return GetAbsURL("/Home/" + GetPage(page));
     }
-}
-@helper Heading(string text)
+}@helper Heading(string text)
 {
     <h2 id="@MakeID(text)" class="content-subhead"><a href="#@MakeID(text)">@text</a></h2>
+}
+@helper SubHeading(string text)
+{
+    <h3 id="@MakeID(text)" class="content-subhead"><a href="#@MakeID(text)">@text</a></h3>
 }
 @helper NavPage(string title)
 {
