@@ -147,7 +147,7 @@ TypeScript has static typing tools as well, and it works with plain JavaScript (
 
 They are not mutually exclusive. TypeScript is a language that is both statically typed and dynamically typed. Dynamic typing is an implementation detail, by default all languages would require it, but static typing means that tools could eliminate run-time typing in certain, or perhaps all scenarios.
 
-JavaScript is another example. There are static typing tools for JavaScript, which is normally dynamically typed. In fact most modern implementations use some static analysis to remove dynamic typing.
+JavaScript is another example. There are static typing tools for JavaScript, which is normally dynamically typed. The closure compiler is an example of a type checker that checks for types in subsets of the code. In fact most modern runtimes use some static analysis to remove dynamic typing which can be expensive. V8 produces a new type each time you.
 
 
 The Ideal Language
