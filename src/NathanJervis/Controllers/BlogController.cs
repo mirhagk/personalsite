@@ -32,7 +32,9 @@ namespace NathanJervis.Controllers
         }
         private string GetBlogContent(string url)
         {
-            return CommonMark.CommonMarkConverter.Convert(GetTextFromPath("~/Content/Blog/" + url + ".md"));
+            var settings = CommonMark.CommonMarkSettings.Default.Clone();
+            settings.AdditionalFeatures = CommonMark.CommonMarkAdditionalFeatures.All;
+            return CommonMark.CommonMarkConverter.Convert(GetTextFromPath("~/Content/Blog/" + url + ".md"), settings);
         }
         private int IndexOfPost(Models.BlogConfig.Post[] posts, string url)
         {

@@ -2,17 +2,22 @@
 	Posts:
 	[
 		{
-			Title: 'LaTeX for the web - Sensible Defaults',
-			Url: 'LaTeX for the web - Sensible Defaults'
+			"Title": "LaTeX for the web - Sensible Defaults",
+			"Url": "LaTeX for the web - Sensible Defaults"
 		},
 		{
-			Title: 'Learn Enough LaTeX to get by - Part 1',
-			Url:'learning enough LaTeX to get by - 1'
+			"Title": "Learn Enough LaTeX to get by - Part 1",
+			"Url":"learning enough LaTeX to get by - 1"
 		},
-		{
-			Title: 'Why is Tracing Garbage Collection faster than Reference Counting?',
-			Url: 'Why is Tracing Garbage Collection faster than Reference Counting',
-			Debug: true
-		}
+    {
+      "Title": "Why is Tracing Garbage Collection faster than Reference Counting?",
+      "Url": "Why is Tracing Garbage Collection faster than Reference Counting",
+      "Debug": true
+    },
+    {
+      "Title": "Static vs Dynamic Typing",
+      "Url": "Static vs Dynamic Typing",
+      "Debug": true
+    }
 	]
 }
