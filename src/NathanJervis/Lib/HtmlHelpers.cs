@@ -22,12 +22,27 @@ namespace NathanJervis.Lib
         }
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            
             output.TagName = "h2";
             output.Attributes.Add("class", "content-subhead");
             output.Attributes.Add("id", MakeID((await output.GetChildContentAsync()).GetContent()));
             foreach (var line in context.Items.Select(x => $"{x.Key}: {x.Value}"))
                 output.Content.AppendLine(line);
+        }
+    }
+    public class NavPageTagHelper : TagHelper
+    {
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            var content = (await output.GetChildContentAsync()).GetContent();
+            //<li @(String.Equals(ViewBag.Title, Html.GetPage(Model.Title)) ? "class='pure-menu-selected'" : "")><a href="@(Html.GetURL(Model.Title))">@Model.Title</a></li>
+            output.TagName = "li";
+            var attributes = new TagHelperAttributeList();
+
+            var builder = new TagBuilder("a");
+            builder.Attributes.Add("href", content);
+            builder.InnerHtml.Append(content);
+
+            output.Content.SetHtmlContent(builder);
         }
     }
     public static class HtmlHelperExtensions
@@ -42,11 +57,11 @@ namespace NathanJervis.Lib
             => await helper.Helper(HelperModel.HelperModelType.Subheading, text);
         public static async Task<HtmlString> Heading(this HtmlHelper helper, string text)
             => await helper.Helper(HelperModel.HelperModelType.Heading, text);
-        public static async Task<HtmlString> NavPage(this HtmlHelper helper, string title)
+        public static async Task<HtmlString> NavPage<T>(this HtmlHelper<T> helper, string title)
             => await helper.Helper(HelperModel.HelperModelType.NavPage, title: title);
-        public static async Task<HtmlString> NavOption(this HtmlHelper helper, string title, string url)
+        public static async Task<HtmlString> NavOption<T>(this HtmlHelper<T> helper, string title, string url)
             => await helper.Helper(HelperModel.HelperModelType.NavOption, title: title, url: url);
-
+         
 
         public static string GetAbsURL<T>(this IHtmlHelper<T> helper, string url)
         {
@@ -56,11 +71,15 @@ namespace NathanJervis.Lib
         {
             return helper.GetAbsURL("/Home/" + helper.GetPage(page));
         }
-        public static string GetPage<T>(this IHtmlHelper<T> helper, string page)
+        public static string GetPage(string page)
         {
             if (String.Equals("home", page, StringComparison.OrdinalIgnoreCase))
                 return "index";
             return page;
+        }
+        public static string GetPage<T>(this IHtmlHelper<T> helper, string page)
+        {
+            return GetPage(page);
         }
     }
 }
