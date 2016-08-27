@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BlogModel
+@{
     ViewBag.Title = "post";
 }
 <div class="header">
@@ -11,22 +12,22 @@
     <div>@Html.Raw(Model.BlogPost)</div>
     <div class="pure-g-r">
         <div class="pure-u-1-4">
-            <a href="@Helper.GetAbsURL("/blog/first")">First Post</a>
+            <a href="@Html.GetAbsURL("/blog/first")">First Post</a>
         </div>
         <div class="pure-u-1-4">
             @if (Model.Previous != null)
             {
-                <a href="@Helper.GetAbsURL("/blog/"+Model.Previous)">Previous Post</a>
+                <a href="@Html.GetAbsURL("/blog/"+Model.Previous)">Previous Post</a>
             }
         </div>
         <div class="pure-u-1-4" style="text-align:right;">
             @if (Model.Next != null)
             {
-                <a href="@Helper.GetAbsURL("/blog/" +@Model.Next)">Next Post</a>
+                <a href="@Html.GetAbsURL("/blog/" +@Model.Next)">Next Post</a>
             }
         </div>
         <div class="pure-u-1-4" style="text-align:right;">
-            <a href="@Helper.GetAbsURL("/blog/last")">Last Post</a>
+            <a href="@Html.GetAbsURL("/blog/last")">Last Post</a>
         </div>
     </div>
     <!-- begin htmlcommentbox.com -->

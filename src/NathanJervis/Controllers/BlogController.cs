@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.AspNetCore.Routing;
 using System.Dynamic;
+using Microsoft.AspNetCore.Hosting;
 
 namespace NathanJervis.Controllers
 {
     public class BlogController : LayoutController
     {
-        ApplicationEnvironment ApplicationEnvironment { get; }
-        public BlogController(ApplicationEnvironment appEnv)
+        IHostingEnvironment Environment { get; }
+        public BlogController(IHostingEnvironment appEnv)
         {
-            ApplicationEnvironment = appEnv;
+            Environment = appEnv;
         }
         //
         // GET: /Blog/
@@ -28,7 +28,7 @@ namespace NathanJervis.Controllers
         }
         private string GetTextFromPath(string path)
         {
-            return System.IO.File.ReadAllText(ApplicationEnvironment.ApplicationBasePath + Url.Content(path));
+            return System.IO.File.ReadAllText(Environment.ContentRootPath + Url.Content(path));
         }
         private string GetBlogContent(string url)
         {
