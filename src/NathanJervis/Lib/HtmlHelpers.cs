@@ -39,7 +39,8 @@ namespace NathanJervis.Lib
             var attributes = new TagHelperAttributeList();
 
             var builder = new TagBuilder("a");
-            builder.Attributes.Add("href", content);
+            var page = content == "Home" ? "Index" : content;
+            builder.Attributes.Add("href", "/Home/" + page);
             builder.InnerHtml.Append(content);
 
             output.Content.SetHtmlContent(builder);
