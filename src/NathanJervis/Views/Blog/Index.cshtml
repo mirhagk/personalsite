@@ -1,0 +1,29 @@
+﻿@model webserver.Models.BlogModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="header">
+    <h1>Blog</h1>
+    <h2>Nathan Jervis</h2>
+</div>
+
+
+<div class="content">
+    <div>@Html.Raw(Model.BlogPost)</div>
+    <div class="pure-g-r">
+        <div class="pure-u-1-4">
+            <a href="/blog/first">First Post</a>
+        </div>
+        <div class="pure-u-1-4">
+            <a href="/blog/previous">Previous Post</a>
+        </div>
+        <div class="pure-u-1-4" style="text-align:right;">
+            <a href="/blog/next">Next Post</a>
+        </div>
+        <div class="pure-u-1-4" style="text-align:right;">
+            <a href="/blog/last">Last Post</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<div class="header">
+    <h1>About</h1>
+    <h2>Nathan Jervis</h2>
+</div>
+
+
+<div class="content">
+    @Helper.Heading("About me")
+    <p>I'm a computer science student working full time. I'm finishing off my degree with night courses, but my real learning occurs through my many side projects.</p>
+    
+    @Helper.Heading("Computer Science Interests")
+    <p>I'm extrememly interested in a few topics in programming:</p>
+    <ul>
+        <li>Programming languages - I like to design toy languages in my spare time, and think about how different syntaxes and semantics could be used to enable more expressive programs</li>
+        <li>Type systems - I enjoy learning about and using various type systems, and love exploring how different type systems can create elegant programs.</li>
+        <li>Program tools - I enjoy tools that help increase programmer productivity, software quality or performance.</li>
+    </ul>
+
+    @Helper.Heading("Core Programming Principles")
+    <p>When I am given a choice in different ways to approach a problem, the 2 principles I use to decide on the approach are:</p>
+    <ul>
+        <li>DRY - Don't Repeat Yourself - I try to limit the amount of copy and pasting I do in a project. If a section of code is going to be similar to an existing one, I try and see if I can refactor the common functionality out.</li>
+        <li>KISS - Keep It Simple, Stupid - I try to ensure that the project has the functionality that is needed, and try to avoid adding unneccessary features. I keep designs open ended enough to provide places for additional functionality to be added, but I don't worry about the functionality unless it is required. Antoine de Saint Exupery states my view perfectly "It seems perfection is reached not when there is nothing left to add, but when there is nothing left to take away." I believe in smaller components that can be chained together in interesting ways rather than large components that provide functionality on their own.</li>
+    </ul>
+
+    @Helper.Heading("Non-Computer Science Interests")
+    A few of my non-computer science interests:
+    <ul>
+        <li>Wheel of Time</li>
+        <li>Skyrim</li>
+        <li>Firefly</li>
+        <li>Doctor Who</li>
+    </ul>
+</div>
