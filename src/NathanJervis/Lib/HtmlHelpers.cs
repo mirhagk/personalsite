@@ -16,7 +16,7 @@ namespace NathanJervis.Lib
 {
     public class HeadingTagHelper : TagHelper
     {
-        private static string MakeID(string x)
+        public static string MakeID(string x)
         {
             return Regex.Replace(x, "[^a-zA-Z]*", "");
         }
@@ -29,19 +29,41 @@ namespace NathanJervis.Lib
                 output.Content.AppendLine(line);
         }
     }
+    public class SubHeadingTagHelper : HeadingTagHelper
+    {
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            await base.ProcessAsync(context, output);
+            output.TagName = "h3";
+        }
+    }
     public class NavPageTagHelper : TagHelper
     {
+        IHttpContextAccessor ContextAccessor { get; }
+
+        public NavPageTagHelper(IHttpContextAccessor contextAccessor)
+        {
+            ContextAccessor = contextAccessor;
+        }
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             var content = (await output.GetChildContentAsync()).GetContent();
             //<li @(String.Equals(ViewBag.Title, Html.GetPage(Model.Title)) ? "class='pure-menu-selected'" : "")><a href="@(Html.GetURL(Model.Title))">@Model.Title</a></li>
             output.TagName = "li";
-            var attributes = new TagHelperAttributeList();
 
             var builder = new TagBuilder("a");
             var page = content == "Home" ? "Index" : content;
             builder.Attributes.Add("href", "/Home/" + page);
-            builder.InnerHtml.Append(content);
+
+            var path = ContextAccessor.HttpContext.Request.Path.Value;
+            var currentPage = path == "" ? "index" : path.Split('/').Last().ToLowerInvariant();
+
+            var isSelected = currentPage == page.ToLowerInvariant();
+
+            if (isSelected)
+                output.Attributes.Add("class", "pure-menu-selected");
+
+            builder.InnerHtml.AppendLine(content);
 
             output.Content.SetHtmlContent(builder);
         }
