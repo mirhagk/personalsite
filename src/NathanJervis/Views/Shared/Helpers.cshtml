@@ -1,0 +1,26 @@
+﻿@model HelperModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@functions{
+    private static string MakeID(string x)
+    {
+        return x.Replace("[^a-zA-Z]*", "");
+    }
+}
+
+@switch (Model.Type)
+{
+    case HelperModel.HelperModelType.Heading:
+        <h2 id="@MakeID(Model.Text)" class="content-subhead"><a href="#@MakeID(Model.Text)">@Model.Text</a></h2>
+        break;
+    case HelperModel.HelperModelType.Subheading:
+        <h3 id="@MakeID(Model.Text)" class="content-subhead"><a href="#@MakeID(Model.Text)">@Model.Text</a></h3>
+        break;
+    case HelperModel.HelperModelType.NavPage:
+        <li @(String.Equals(ViewBag.Title, Html.GetPage(Model.Title)) ? "class='pure-menu-selected'" : "")><a href="@(Html.GetURL(Model.Title))">@Model.Title</a></li>
+        break;
+    case HelperModel.HelperModelType.NavOption:
+        <li class="pure-menu-selected"><a href="@Model.Url">@Model.Title</a></li>
+        break;
+}

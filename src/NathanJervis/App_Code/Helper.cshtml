@@ -1,19 +1,5 @@
 ﻿@functions
 {
-    private static string GetPage(string page)
-    {
-        if (String.Equals("home", page,StringComparison.InvariantCultureIgnoreCase))
-            return "index";
-        return page;
-    }
-    public static string GetAbsURL(string url)
-    {
-        return (Request.ApplicationPath.TrimEnd('/') + url);
-    }
-    private static string GetURL(string page)
-    {
-        return GetAbsURL("/Home/" + GetPage(page));
-    }
 }
 @functions{
     Html

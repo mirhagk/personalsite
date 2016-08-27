@@ -11,8 +11,8 @@ namespace NathanJervis.Controllers
 {
     public class PartialController : Controller
     {
-        CompositeViewEngine ViewEngine { get; }
-        public PartialController(CompositeViewEngine viewEngine)
+        ICompositeViewEngine ViewEngine { get; }
+        public PartialController(ICompositeViewEngine viewEngine)
         {
             ViewEngine = viewEngine;
         }
@@ -86,7 +86,7 @@ namespace NathanJervis.Controllers
             //If we couldn't figure out routing, just send it back to the regular router
             //return RedirectToAction(origAction, origController, new { id = id });
         }
-        protected async Task<string> RenderPartialViewToString(string viewName, object model)
+        public async Task<string> RenderPartialViewToString(string viewName, object model)
         {
             if (string.IsNullOrEmpty(viewName))
                 viewName = ControllerContext.RouteData.Values["action"] as string;
