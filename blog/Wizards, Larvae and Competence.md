@@ -41,6 +41,36 @@ If we look at the 3 programmers that make up a healthy workplace and look at who
 
 So seeing that someone has a life outside of work doesn't help you determine if they are a wizard or not. It can only help you figure out whether they are a larvae or not. If you use this as a filter for hiring you'll get either all larvae, or a mix of wizards and competent devs without any larvae. Neither one is good, and they equal out to around the same in terms of productivity.
 
+How can you use this as a filter then?
+
+Well the theory is that every wizard had to go through a larva stage. During this time they focused solely on programming and they gain the skills and expertise they need. During this period they are potentially highly skilled workers, but they don't necessarily fit well onto teams.
+
+However as they gain the experience and skills they will need to "live and breathe" code less and less. Conversations about programming will become more high level. 
+
+Stages of Program Solving
+---
+
+As skills get better, the approach to a problem changes.
+
+1. How do I do this?
+2. What's the best way to do this?
+3. What are the different ways that would work, and the pros and cons of each?
+
+A novice programmer will be stuck on how to solve a problem. At this point problems are identified, and solutions are found without any thinking about whether the approach is the best one.
+
+An intermediate programmer will think about the problem and consider the best way to solve it. They'll use their knowledge of software development best practices to implement the solution and it'll be following industry standards. 
+
+An advanced programmer takes it a step further. They will realize multiple solutions are appropriate, and all have their own merits and problems. Ultimately they will select one of these approaches, but the difference from the intermediate programmer is they will consider what is best for the business. They will see how the advantages and disadvantages apply to the business rather than just the software itself.
+
+The thing to look out for is the larvae who are at the intermediate level will have an opinion on what is the **best** way to do something. A more advanced programmer will open up the conversation for alternative approaches, perhaps even trying something new.
+
+The larva's tendency to believe there is a singular best way will often cause them to view other approaches negatively, and hence the people suggest them negatively as well. This is a big part of the reason why larvae have a hard time on a team.
+
+Finding Wizards
+---
+
+So if we know that all wizards went through a larva stage, we can use this to find the wizards. You want to look for people that do have a life outside of programming, but had a point in their life where they didn't.
+
 
 
 [4typesworker]: https://www.linkedin.com/pulse/20140924092532-36949259-4-types-of-employees-every-leader-must-know
