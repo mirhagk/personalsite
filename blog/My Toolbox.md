@@ -94,13 +94,22 @@ Be careful though as the `git shell` tool can only be properly updated through t
 Everything
 ---
 
-Everything is a tool to find any file you need very quickly. It indexes the file system for you and provides a way to very quickly search across all of them, using regex
+Everything is a tool to find any file you need very quickly. It indexes the file system for you and provides a way to very quickly search across all of them, using regular expressions. It's the fastest way to find out where the `.dll` is stored on your system.
 
 Papercut
 ---
 
+Papercut is an indispensable tool if your software creates e-mails. Simply put your software to the mail host of `127.0.0.1` and this will catch and display all the e-mails. You don't need to alter the code at all and you are able to test the entire system to ensure e-mails are working.
+
+
 Excel
 ---
 
+Excel is my calculator. If I need to quickly add 2 numbers I open up excel and write the  number in the first two cells and `=A1+A2` in the third cell. It's overkill for simple calculations but I usually find myself fiddling with the variables and trying out different input values to a formula and with excel I can easily drag the formula down to cover several rows and then change the inputs and see the results next to each other.
+
+The other major thing I use excel for on a day to day basis is copying query results into excel for formatting as a table or a graph for ad-hoc reporting. 
+
 Sql Server Management Studio
 ---
+
+SQL Server Management Studio is an extremely nice user interface for managing, exploring and querying a SQL database. There are many things LinqPad does better, but LinqPad is very narrowly scoped and is a far way off from being my SQL Server Management Studio replacement.
