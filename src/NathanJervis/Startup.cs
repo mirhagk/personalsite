@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebApiContrib.Core.WebPages;
 
 namespace NathanJervis
 {
@@ -37,6 +38,7 @@ namespace NathanJervis
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+            //services.AddWebPages(new WebPagesOptions { RootViewName = "Index" });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +62,7 @@ namespace NathanJervis
             app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
+            //app.UseWebPages();
 
             app.UseMvc(routes =>
             {
