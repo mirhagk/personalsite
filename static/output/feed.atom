@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="/" />
+	<id>/</id>
+	<title>My Blog</title>
+	<rights>2017</rights>
+	<updated>2017-01-21T05:43:51Z</updated>
+	<subtitle>Welcome!</subtitle>
+	<entry>
+		<link href="/posts/Why-is-a-tracing-garbage-collector-faster-than-Reference-Counting" />
+		<id>/posts/Why-is-a-tracing-garbage-collector-faster-than-Reference-Counting</id>
+		<title>Why is a tracing garbage collector faster than Reference Counting</title>
+		<updated>2014-03-01T00:00:00Z</updated>
+		<content>&lt;p&gt;We're going to take a small break from our LaTeX series to talk about garbage collection. First of all:&lt;/p&gt;
+&lt;h2 id="history-of-garbage-collection"&gt;History of Garbage Collection&lt;/h2&gt;
+&lt;p&gt;Many of us programmers are really spoiled nowadays. Back in the early days when you wanted some memory, you had to find it yourself. Memory wasn't this magic thing that you could get some area of, it was just a giant chunk, and if you wanted to use a location, you just used it.&lt;/p&gt;
+&lt;p&gt;Of course you had to make sure other parts of your program weren't using the same section, so memory allocation was born. You'd write a function that would find some memory for you and give it to you. But you had to promise to give it back when you were done. It kept a list of memory locations that were currently free, and just gave you an item from that list of about the same size (there's of course some complexities such as if you ask for something smaller, it'll break it up into 2 sections, and it can combine smaller sections into bigger ones, but that's all behind the scenes).&lt;/p&gt;
+&lt;p&gt;So the basic memory allocation process was born, consisting of 2 functions &lt;code&gt;allocate&lt;/code&gt; and &lt;code&gt;free&lt;/code&gt;, which would allocate you memory and free it, as the names suggested. There were several problems though. The first problem is how can it possibly find something of the correct size. This was solved with various implementations that could shrink or grow other free parts of memory to make it work. This led to fragmentation which will get to in a minute.&lt;/p&gt;
+&lt;p&gt;The other problem is from the programmer's perspective. What if a piece of code decides to share it's object with another function? Who's responsible for calling &lt;code&gt;free&lt;/code&gt; then? Obviously whoever uses it last, but it's not like you can check if anyone else is using it. It's like that container of rotting food in the work fridge. You want to get rid of it, but you don't know if anyone else is saving it for later.&lt;/p&gt;
+&lt;p&gt;The solution to this actually is comprised of 2 separate solutions. Tracing and Reference Counting.&lt;/p&gt;
+&lt;h2 id="reference-counting"&gt;Reference Counting&lt;/h2&gt;
+&lt;p&gt;The first solution is rather simple. You basically store a number with the object that says how many things are using it. When something stops using it, it decreases this counter, and if it gets to zero it calls free. Now each time you share it, you have to increase the counter.&lt;/p&gt;
+&lt;p&gt;This is a fairly simple solution, and works alongside the old method of allocating and freeing which means if you know you're the only one who's going to use it, you don't need to use reference counting.&lt;/p&gt;
+&lt;p&gt;It does however make for an annoying number of calls to increase and decrease this number, and still requires the programmer to keep track of when they need to increase or decrease the number. Really the root problem is humans suck at keeping track of things. We don't want to have to know when we have to call &lt;code&gt;free&lt;/code&gt; and similarly we don't want to have to know when to decrease the number. That's where Tracing comes in.&lt;/p&gt;
+&lt;h2 id="tracing-garbage-collection"&gt;Tracing Garbage Collection&lt;/h2&gt;
+&lt;p&gt;Just a note:&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Tracing Garbage Collection is often just referred to as a garbage collector, but reference counting is technically a garbage collector as well, so make sure you are clear about what someone refers to when they say "Garbage collection"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Tracing garbage collection takes all the work of managing memory away from the programmer. If you've never thought about where the variables are actually stored, you've probably been spoiled with it. Languages like javascript, python, java, C# and haskell use variations of tracing garbage collection so the programmer doesn't have to worry about it. It's fundamental in a high level language that the programmer need not worry about memory, which is a low level concept.&lt;/p&gt;
+&lt;p&gt;Tracing basically works by giving you memory when you ask for it, and you don't bother calling &lt;code&gt;free&lt;/code&gt; or doing anything. Rather when it runs out of memory (or maybe at some other point it feels like) it will pause the program, and actually walk through your program's references, seeing what you refer to. It then walks through those objects seeing what they refer to. It keeps doing this until there's no more new locations to look at. At this point it knows that if it hasn't come across a memory location, it's because nothing within the scope of your program refers to it, and so it can feel free to reclaim that memory.&lt;/p&gt;
+&lt;p&gt;Now all this bliss for the programmer doesn't come free. The memory manager needs to know what's a pointer and what's not a pointer, so no pointer arithmetic is allowed. You as a programmer aren't allowed to know what memory location a pointer is pointing to, you can only access the memory and check if 2 pointers point to the same thing.&lt;/p&gt;
+&lt;p&gt;This of course isn't a problem for high level programmers. I can't remember the last time someone complained that they couldn't add random numbers to their pointer, or xor it with another pointer or any other pointer arithmetic.&lt;/p&gt;
+&lt;p&gt;The other complaint that usually comes with tracing collection is that it pauses your program and takes a while to sort things out, which is true, so if you're developing something that can't afford to pause for a millisecond or 2 then tracing garbage collection isn't the answer. The other complaint is that it runs too often, and therefore takes up too much of the programs time. However if it's running too often, it's because the program is running out of memory too much, so it can be solved by making the program not waste so much memory.&lt;/p&gt;
+&lt;h2 id="addressing-the-problems-with-reference-counting"&gt;Addressing the problems with Reference Counting&lt;/h2&gt;
+&lt;p&gt;Now we can achieve a similar level of taking the burden of managing memory away from the programmer with automatic reference counting. Basically the compiler inserts all those calls to increase and decrease the counter for you. When this is done it's usually just referred to as garbage collection, and if it is a complete solution (wherein the compiler is the only one to insert those calls) then you don't even need to know that it's doing reference counting under the hood. You can assume it's just doing tracing garbage collection under the hood.&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Note this is not true of something like objective-c where the programmer has control over the memory still, just has the option to relinquish control&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is actually how PHP works under the hood, but you wouldn't know it from looking at the language.&lt;/p&gt;
+&lt;p&gt;Of course you still have another problem with cycles. Basically if object A points to object B, and object B points to A, then they'll never reach a counter of 0. You'd have to free object A before object B gets freed, and you'd have to free object B before object A gets freed. If object A or B also referred to other objects then those wouldn't be freed either, so this can be a very bad thing. A naive solution to this is to give a separate kind of pointer to the programmer, and this pointer doesn't count for references. This of course works, but now the programmer needs to be aware of where cycles could exist and see the above note on how humans suck at keeping track of things. It could also create the below situation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function Foo():
+	parent = new Thing()
+	child = new Thing()
+	parent.child = child
+	child.parent = WeakPointer(parent) //this reference isn't counted by the reference counter
+	return child
+
+function Main():
+	object = Foo()
+	DoSomething(object.parent) //uh oh, parent is a dangling pointer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this code we see that the Foo function creates 2 objects, parent and child. It then makes them refer to each other, but the child only has a weak reference. When the function returns, the compiler would release the parent object since nothing is pointing to it anymore (since the child's reference doesn't count). Now when the main function tries to do something with the parent object, the parent object has already been freed. This is called a dangling reference, and it's basically one of the most awful things a programmer has to deal with in memory-unsafe languages.&lt;/p&gt;
+&lt;p&gt;The above is the way objective-c and most C++ libraries deal with it, and it's not pleasant. PHP before 5.3 dealt with it in a unique way, it just ignored it (meaning you could fairly easily leak memory). Newer versions will now detect these cycles and remove them, in a similar way to tracing garbage collection. This is much nicer as it removes the worry from the programmer.&lt;/p&gt;
+&lt;h2 id="okay-so-does-it-matter"&gt;Okay so does it matter?&lt;/h2&gt;
+&lt;p&gt;Okay so we can make reference counting behave like tracing garbage collection, so why we would ever have tracing which pauses your program and makes you wait? Well because it's faster.&lt;/p&gt;
+&lt;p&gt;Wait what? Pausing your program completely, and scanning through all of memory periodically is faster than just keeping track of what's being referenced with a counter? How?&lt;/p&gt;
+&lt;p&gt;Well here's why:&lt;/p&gt;
+&lt;p&gt;###Free memory management&lt;/p&gt;
+&lt;p&gt;If you happen to have a GB of RAM free, and your program only uses MB's of memory, then you don't need to free memory. If your program doesn't create enough garbage to fill up memory, then the garbage collector doesn't need to run. With a tracer it can just not run until it's needed, and you save all of the cost of freeing memory. Reference counting doesn't know that you won't need to free memory though, so it still does all it's work, and frees the memory you stop using it. It does a lot of work that isn't even needed.&lt;/p&gt;
+&lt;p&gt;Garbage collection can mean that you don't pay any of the cost of managing memory unless you need to. This can be very significant. The D compiler actually decided to remove all calls to &lt;code&gt;free&lt;/code&gt; to increase speed, and even to &lt;code&gt;malloc&lt;/code&gt; (it built it's own memory manager that doesn't care about freeing). It got a very significant performance increase, at the cost of not being able to compile arbitrarily large programs. If it used the right kind of tracing garbage collector, it could get the exact same performance benefits, but still be able to compile larger programs.&lt;/p&gt;
+&lt;p&gt;###Reference counting pauses too&lt;/p&gt;
+&lt;p&gt;Reference counting pauses your program too, when it frees memory. It pauses your program to free the reference, then free whatever that object is pointing to etc. This happens to usually not be a lot, but can anyone think of something where you have something that refers to something else that refers to something else that refers to something else? The answer is linked lists, or trees. These data structures are all kept indirectly through the root node, and if you free the root node, then the reference counter has to go through all the members of the linked list or tree and free them individually. If you for some reason have a 512 MB tree, then it's going to walk through that entire thing and free 512 MB of your memory. If they all shared a reference to some object, it's also going to decrease that counter one by one for each node in the tree. This could all add up to pausing your program for a significant amount of time.&lt;/p&gt;
+&lt;p&gt;When you say that reference counting doesn't pause the entire program, you have to follow that with a little footnote saying "Not for very long in most cases that is. It could go for longer, but either have to be a bad programmer or a fan of LISP to use linked lists/trees of that size"&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Incidentally this is why most LISP implementations use tracing collectors and not reference counters. In fact LISP was the first language to implement a tracing garbage collector&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###Reference counting suffers from fragmentation&lt;/p&gt;
+&lt;p&gt;We mentioned earlier something about fragmentation and that we'd get to it later. Well it's been a while but now we'll finally talk about it. Basically there's 2 categories of fragmentation, internal and external.&lt;/p&gt;
+&lt;p&gt;Internal fragmentation happens when you ask for 500 bytes of memory and the memory manager has something that is 512 and it says "close enough" and gives you the whole 512 bytes. It doesn't even tell you about it, you just go on using the first 500 bytes as if you aren't wasting those 12 bytes. I mean the memory manager knows, and when it gets that back it'll take back the whole 512 bytes, but while you're using it it's wasted.&lt;/p&gt;
+&lt;p&gt;External fragmentation is a more serious problem. Let's say it has made little sections of 512 bytes, and it has 5 of them in a row, like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block 1 | free
+block 2 | free
+block 3 | free
+block 4 | free
+block 5 | free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You ask for 3 sections that are 512 bytes each, and it may look like this now:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block 1 | A
+block 2 | B
+block 3 | C
+block 4 | free
+block 5 | free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now let's say you no longer refer to A and B. This means it'll look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block 1 | free
+block 2 | free
+block 3 | C
+block 4 | free
+block 5 | free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you now ask for more than 1024 bytes it will say it's out of memory, even though the memory is there, it just isn't in the right order. There's no section bigger than 1024 all in a row, so you've reduced the amount of memory available for a single object.&lt;/p&gt;
+&lt;p&gt;Tracing collection solves this problem by just moving C around, and then it can get enough space. It can do this since it can walk through memory and know where all the references to C are. Reference counting does not know where the references to C are however, so it can't move C around and is stuck with the limited space until you free object C.&lt;/p&gt;
+&lt;p&gt;By moving stuff around tracing garbage collectors don't have to suffer from fragmentation while external fragmentation will always exist in reference counters.&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Note that depending on the implementation, the garbage collector may still have this fragmentation. Many of the collectors in popular languages are actually just thin wrappers around the standard &lt;code&gt;alloc&lt;/code&gt; &lt;code&gt;free&lt;/code&gt; implementations, and aren't optimized for the language&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###Reference counting has crappy cache performance&lt;/p&gt;
+&lt;p&gt;There's a common law followed by cache designers and it's called the principle of locality. Basically it says that if you use one piece of memory, the stuff right beside it is likely to be used soon. Therefore stuff that's close together in memory is considered to be used together.&lt;/p&gt;
+&lt;p&gt;The repercussion of this is that when you ask for a certain memory location, the computer actually fetches the stuff around it too, so if you use those locations, it'll be much faster. If your access to memory doesn't follow the principle of locality, your program suffers from what's called "cache thrashing" where nothing it grabs is used before it's overwritten with new data, so you never get the benefit of the cache.&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;When you have the worst case cache thrashing, where nothing is used, not only do you get no benefit, but you actually get worse performance than if there was no cache, as it does extra work to load in extra data for the cache&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Therefore a program should seek to follow the principle of locality as best it can. Reference counting (along with manual memory management) does not follow this principle very well. This is because when you ask for memory, the first few times they come back all in a row, but once you've filled it up and it's grabbing from freed locations, those locations could be anywhere, and you may get completely different memory locations each time you call it in a row.&lt;/p&gt;
+&lt;p&gt;An example will serve us well. Let's say you run your program, and it's gotten to the rather unpleasant state below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block 1 | free
+block 2 | taken
+block 3 | free
+block 4 | taken
+block 5 | free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The next 3 blocks you ask for will not be next to each other at all, rather they are in completely different locations. This could even be extended to the point where they are in entirely different pages of memory. If you work with these 3 values in a row then they will "thrash" the cache and make your program slow down.&lt;/p&gt;
+&lt;p&gt;With garbage collection you might have a similar memory model (remember that unused memory doesn't get freed until you run out of memory):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block 1 | unused
+block 2 | taken
+block 3 | unused
+block 4 | taken
+block 5 | unused
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then you request a block, so it needs to free the memory. If the tracing collector has compacting, and detects that it'd be helpful (ie the blocks are small enough) it could move the existing blocks around to make it look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block 1 | taken
+block 2 | taken
+block 3 | free
+block 4 | free
+block 5 | free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now when you get the next 3 blocks, they will be all in a row, and you're application might get a noticeable speed up.&lt;/p&gt;
+&lt;p&gt;###Reference counting can't use bump pointer allocation&lt;/p&gt;
+&lt;p&gt;Bump pointer allocation is the most basic form of memory allocation. Basically you have a pointer pointing to a spot in memory. Then you want say 512 bytes, so return the pointer, and make the pointer point to the end of the section. It requires a large area of free memory to work, but it's blazingly fast. It's O(1), which means it's a constant cost no matter what the state of memory is.&lt;/p&gt;
+&lt;p&gt;When the garbage collector runs out of space, it can free memory, and then compact as above. Now it has a very large space at the end of memory to use for this allocation again.&lt;/p&gt;
+&lt;p&gt;In practice most garbage collectors use small blocks, and all big allocations get allocated separately. Small allocations get allocated into a block, and the entire block is freed all at once.&lt;/p&gt;
+&lt;p&gt;###Reference Counting does more work&lt;/p&gt;
+&lt;p&gt;Basically consider the amount of work that happens to your objects over the scope of their lifetime. Every object has to be created, so the memory manager must find some location in memory of the right size (we've seen tracing collectors can be faster with this, but let's assume they take the same speed). Then every object must be freed, which involves telling the memory manager it's free to use it. This is usually not very expensive, but it's dependent on the memory allocator. Again with tracing garbage collection it's possible for it free larger chunks at one time (because it can see that 5 objects in a row are all unused), but we can assume that it takes roughly the same time.&lt;/p&gt;
+&lt;p&gt;Then comes in the individual costs. When you free memory in a reference counter, it must trace all the references it points to. The same is true during the collection cycle of a garbage collector, except you don't pay it when you free the object, you pay for it when it survives a collection cycle.&lt;/p&gt;
+&lt;p&gt;What this means is that if you have a lot of objects that have a short life time, then those objects don't have the reference walking occur on them, since they won't last until the collection cycle.&lt;/p&gt;
+&lt;p&gt;It just so happens that this is another one of those implicit rules, most objects die young. If they don't die young, they will probably last a long time, and could require walking several times. Many garbage collectors however promote objects that survive to a privileged level, and don't get walked over again until the system really needs to collect a bunch of memory.&lt;/p&gt;</content>
+		<summary>&lt;p&gt;We're going to take a small break from our LaTeX series to talk about garbage collection. First of all:&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="/posts/learn-enough-LaTeX-to-get-by-part-1" />
+		<id>/posts/learn-enough-LaTeX-to-get-by-part-1</id>
+		<title>Learning enough LaTeX to get by - Part 1</title>
+		<updated>2014-02-01T00:00:00Z</updated>
+		<content>&lt;h1 id="what-is-latex"&gt;What is LaTeX?&lt;/h1&gt;
+&lt;p&gt;LaTeX is a great markup/typesetting language that produces professional documents for almost no work. It also allows for typesetting mathematical formulas or arbitrary equations. It is a critical to know for anyone in a technical field that plans on writing papers, or any undergrads wanting to impress profs with their assignments.&lt;/p&gt;
+&lt;h2 id="latex-must-be-really-hard"&gt;LaTeX must be really hard&lt;/h2&gt;
+&lt;p&gt;If you're thinking LaTeX is really hard, then you'll be glad to know that you are wrong. LaTeX certainly has it's quirks, and if you plan on becoming a LaTeX master you will have to study ancient tomes, and be prepared to learn for years. You don't need to be a LaTeX master to create awesome documents though, you just need to know a few tricks, this post will hopefully get you on your way with LaTeX in no time.&lt;/p&gt;
+&lt;h2 id="purpose"&gt;Purpose&lt;/h2&gt;
+&lt;p&gt;The point of this quick introduction to LaTeX is to teach you enough about LaTeX to start writing documents, it avoids some of the technical points and history contained in other guides, and focuses on the basics. After reading this guide, you should have all the skills necessary to create your own beautiful documents and impress your professors.&lt;/p&gt;
+&lt;h2 id="command-structure"&gt;Command Structure&lt;/h2&gt;
+&lt;p&gt;The basic structure of a LaTeX command is one of the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\command{argument}[optional argument]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\begin{environment}{argument}[optional argument]
+%stuff
+\end{environment}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first structure is where you have the name of the command, and you pass it arguments. Required arguments are passed in curly braces &lt;code&gt;{}&lt;/code&gt; and optional ones are passed with square brackets &lt;code&gt;[]&lt;/code&gt;. You can think of this as a function call if you'd like. Essentially the program runs through and replaces these commands with the text in the command definition.&lt;/p&gt;
+&lt;p&gt;The second structure creates an environment between the begin and end commands. This can be nearly anything, from creating a table, to formatting the internal section as code, or mathematical expressions. The important thing is that this can actually change the way the document is read, so normal LaTeX rules don't neccessarily apply here. Don't worry about that too much though, we'll come back to that later.&lt;/p&gt;
+&lt;p&gt;You can also create comments in LaTeX by using &lt;code&gt;%&lt;/code&gt;. Anything after that is a comment like below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\command %this is a comment next to the command
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that you know how the commands really work, let's dive into creating a document.&lt;/p&gt;
+&lt;h2 id="installation-blah-blah-blah"&gt;Installation - blah, blah, blah&lt;/h2&gt;
+&lt;p&gt;The first step is to install LaTeX. You have to choose what package you want to install, since there are many different editors available. Personally on windows I like &lt;a href="http://www.tug.org/texworks/"&gt;Texworks&lt;/a&gt; but you can feel free to install whichever you want, the differences are just in the editor, not in the actual documents you'll write.&lt;/p&gt;
+&lt;p&gt;Since there's so many different environments available, I'm not going to help with the installation. It should be a fairly straight forward process, but if you have difficulty just ask around on forums, or in the comments below.&lt;/p&gt;
+&lt;h2 id="skeleton"&gt;Skeleton&lt;/h2&gt;
+&lt;p&gt;Below is a skeleton for a basic LaTeX document. If this overwhelms you don't worry. You don't have to understand most of this stuff, you just have to change the title and the author and start writing between the &lt;code&gt;\begin{document}&lt;/code&gt; and &lt;code&gt;\end{document}&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{amsmath} % better math environment
+\usepackage{verbatim} % adds environment for commenting out blocks of text &amp;amp; for better verbatim
+
+\title{Sample Document}
+\author{Nathan Jervis - mirhagk}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%content goes here
+
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first thing the document has is a declaration of what kind of thing you are making. Since LaTeX supports creating scientific papers as well as other things like books, this tells it what you are making. For short papers, assignments, essays etc, the article class is good, and you can just leave it at that. It also sets the font size, increases it from the default 10pt to 11pt, this isn't neccessary, but some people find 10pt a little too small.&lt;/p&gt;
+&lt;p&gt;Then it grabs a whole bunch of useful packages, that we will end up using later. You may notice it also has &lt;code&gt;\geometry{a4paper}&lt;/code&gt; which simply tells LaTeX what size the paper is.&lt;/p&gt;
+&lt;p&gt;Title and author follow, which is simply the title of the paper, and the author. 2 tips here, first you can use the &lt;code&gt;\and&lt;/code&gt; command if you have multiple authors and want it to be formatted nicely in the author section. Use it like this &lt;code&gt;\author{john doe \and jane doe}&lt;/code&gt;. The 2nd tip is that you can include the &lt;code&gt;\date&lt;/code&gt; command if you want to specify a different date than today (or you can leave it blank to leave out the date). Mostly this isn't needed, since you want the document to be dated the day when you last compiled it, but if you find you need it you simply use it like this: &lt;code&gt;\date{December 11, 2013}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then the actual document starts. The first two commands create the title (nicely formatted name) and the table of contents. If you don't want a table of comments just remove that line (or comment it out).&lt;/p&gt;
+&lt;p&gt;After that is your actual document. You can start writing here, but first we need to explain some useful commands for writing, and some quirks of writing with LaTeX. Before we dive into this, let's get this sample up and running. Copy this into a new document &lt;code&gt;hello_world.tex&lt;/code&gt; and include the following section where the &lt;code&gt;%content goes here%&lt;/code&gt; comment is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\section{Introduction}
+Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once you have that all ready to go, simply compile your document (depending on the environment you may need to actually compile a few times). Then you should see your first document, with the section heading right there and everything automatically pulled into your table of contents. Again you can remove the table of contents if you don't like it, it's mostly useful for longer documents, or things that you may jump around with.&lt;/p&gt;
+&lt;h2 id="latex-rules"&gt;LaTeX rules&lt;/h2&gt;
+&lt;p&gt;So first thing's first. There are a few rules:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Whitespace doesn't really matter. If you were to write
+&lt;code&gt;Hello&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;World!&lt;/code&gt;
+it would still only have 1 space in the output. This is similar to HTML and markdown. In order to get a new line you actually need to have an empty line between paragraphs. You can also use the &lt;code&gt;\\&lt;/code&gt; command, which inserts a newline.&lt;/li&gt;
+&lt;li&gt;Certain symbols are special in LaTeX, in order to use the actual symbol (for symbols like %, $, and &amp;amp;) you need to escape it with a backslash like so &lt;code&gt;\% \$ \&amp;amp;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;LaTeX should always be written with the macro, &lt;code&gt;\LaTeX&lt;/code&gt; so that it's formatted nicely. This isn't actually a rule, but you should still do it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are some exceptions to these rules, in certain environments, but we can get to those later.&lt;/p&gt;
+&lt;h2 id="sections"&gt;Sections&lt;/h2&gt;
+&lt;p&gt;The most useful command you'll use in LaTeX is the &lt;code&gt;\section&lt;/code&gt; command. With it you specify a section title, and it'll format that section title for you, and include it in the table of contents. You can also create subsections with the handily named &lt;code&gt;\subsection&lt;/code&gt; command (and if you really want you can create &lt;code&gt;\subsubsections&lt;/code&gt; as well). It's use is very simple:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\section{Introduction}
+Lorem ipsum
+\subsection{Background}
+more content
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Try it out, and you'll see how easy it is.&lt;/p&gt;
+&lt;h2 id="conclusion-of-part-1"&gt;Conclusion of part 1&lt;/h2&gt;
+&lt;p&gt;You now should know enough to create most simple LaTeX documents. You can't do any formatting of text, or mathematical expressions, but those will come next. Then we will end off with some advanced tools, like inserting images, tables, lists, links and code.&lt;/p&gt;
+&lt;p&gt;I hope you've learned something, and realized that LaTeX is not that hard to learn, and really quite beautiful. I love not having to do any formatting work myself, just counting on the fact that LaTeX knows what it's doing and can make my document awesome.&lt;/p&gt;
+&lt;p&gt;If you have any problems, feel free to post in the comments below, or contact me for more help.&lt;/p&gt;</content>
+		<summary>&lt;p&gt;LaTeX is a great markup/typesetting language that produces professional documents for almost no work. It also allows for typesetting mathematical formulas or arbitrary equations. It is a critical to know for anyone in a technical field that plans on writing papers, or any undergrads wanting to impress profs with their assignments.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<link href="/posts/LaTeX-for-the-web---Sensible-defaults" />
+		<id>/posts/LaTeX-for-the-web---Sensible-defaults</id>
+		<title>\LaTeX{} for the web - Sensible web defaults</title>
+		<updated>2014-01-01T00:00:00Z</updated>
+		<content>&lt;h1 id="latex-for-the-web-sensible-web-defaults"&gt;\LaTeX for the web - Sensible web defaults&lt;/h1&gt;
+&lt;p&gt;LaTeX is a great formatting language. For those of you who don't know it, it's a formatting language which is used for many technical papers and textbooks. It allows for typesetting mathematical equations perfectly but that's not why its so great.&lt;/p&gt;
+&lt;p&gt;There are two things that make LaTeX so great, the first is flexibility, the second is sensible defaults.&lt;/p&gt;
+&lt;h2 id="flexibility"&gt;Flexibility&lt;/h2&gt;
+&lt;p&gt;LaTeX allows you to completely customize the layout, controlling anything you want. You can customize within the document itself or by having a separate sheet for the styles. The web is similarly flexible, it allows you to use either inline CSS or have a separate stylesheet, and you can control mostly the same things.&lt;/p&gt;
+&lt;p&gt;The one thing LaTeX has that HTML is missing is the ability to create your own commands. This is what gives LaTeX it's true flexibility. As an example, you can define an environment that'll actually show whitespace as is, which is very handy, or you could create a set of commands to turn the document into a slideshow.&lt;/p&gt;
+&lt;p&gt;You can't really do this with the web. Sure you can fake it with divs with classes and JavaScript, but that creates hidious awful code (frameworks like EmberJS make your source code look quite awful, and editors don't play nice with things they do). Even if you do fake it with JavaScript, and you're okay with ugly HTML, you still use a dynamic language for static content. A good number of websites don't really do any dynamic work, and could go without JavaScript, but end up including it to get something like a nav bar or side bar to work like they want. It seems silly to have the browser to so much work for so little.&lt;/p&gt;
+&lt;p&gt;The biggest tragedy with the web solution is that it's almost as hard to learn or use as to write it yourself. Also the fact that its hard to do any sort of configuration means that libraries are often unable to be configured without diving into source code. This means there are thousands of libraries competing to do essentially the same thing. All of them are implemented slightly different too, so mixing and matching libraries is not fun. LaTeX on the other hand has very libraries that are easily configured and easy to use.&lt;/p&gt;
+&lt;p&gt;Speaking practically, it is pretty much a requirement to know JavaScript to build beautiful sites, whereas I barely know anything about creating LaTeX elements (I can define simple macros that's about it) and I'm able to create absolutely gorgeous LaTeX documents with all kinds of bells and whistles.&lt;/p&gt;
+&lt;p&gt;The web unfortunately evolved instead of being planned, which means we're stuck with abusing languages for things they weren't designed for. HTML used to do all the basic structural elements, nowadays you need to import JavaScript to do anything. We rely on JQuery for features that should've be standardized and use classes for elements that we should be able to create.&lt;/p&gt;
+&lt;h2 id="sensible-defaults"&gt;Sensible defaults&lt;/h2&gt;
+&lt;p&gt;The other major feature LaTeX has over the web is sensible defaults. If you create a bare bones LaTeX document with just the content (no styling), it'll already look gorgeous, and you'll actually pretty much be done. If you created a bare bones HTML page it'll look like [this](&lt;a href="http://mother"&gt;http://mother&lt;/a&gt; ducking website.com) (warning language). HTML without CSS frankly looks like crap and no respectable web developer would ever have a website with no CSS.&lt;/p&gt;
+&lt;p&gt;About 90% of my LaTeX documents require no styling, just semantic markup, and the default processor does an amazing job of making it look gorgeous. It has years of research into making readable, usable documents. In fact doing your own styling is discouraged.&lt;/p&gt;
+&lt;p&gt;The other few times all I do is import a style file and maybe pass a few configuration arguments in.&lt;/p&gt;
+&lt;p&gt;It saddens me to think of how many developers have wasted so much time recreating a basic look, or designing layouts for such basic concepts (nav bars, footers, titles require a great deal of styling, but everyone has them, and most are very similar).&lt;/p&gt;
+&lt;p&gt;The requirement for every site to use CSS combined with a war to have flashier and flashier sites mean that a web user needs to learn hundreds of interfaces to function in their web browsing. Wouldn't it be great if there were only a few, and user's already knew how to navigate a new site? Any writer who uses LaTeX can automatically identify when it is used, and knows exactly how it works.&lt;/p&gt;
+&lt;p&gt;Not having sensible defaults means we need to do so much work, and waste so much time, just to get a usable site. Creating beautiful sites should be as easy as it is with LaTeX.&lt;/p&gt;
+&lt;h2 id="so-what"&gt;So what?&lt;/h2&gt;
+&lt;p&gt;Is there a point to this rant about how awesome Donald Knuth is and how he should've designed HTML?&lt;/p&gt;
+&lt;p&gt;Well my hope is that eventually a CSS library will be created that'll be so easy to use, and create such sensible, beautiful defaults that it'll just be default in every developers toolkit. It'll be auto-included in your generated template, and will be understood and praised by all. There are a few frameworks out there that may be candidates but a lot try to be flashy instead of just providing sensible, usable defaults. &lt;a href="http://purecss.io"&gt;purecss&lt;/a&gt; is along the right track but the customizing is still not fun (you shouldn't have to recreate an entire style sheet just to select which colours you want). This is of course a limitation of CSS (no variables and no conditionals), but maybe CSS will grow more powerful in the future.&lt;/p&gt;
+&lt;p&gt;I would also hope that creating new HTML elements might become a thing, and will be as easy to use as LaTeX elements.&lt;/p&gt;
+&lt;p&gt;I dream of a day where I can write HTML quickly, and throw up a webpage without it looking like crap. I hope I may see this day soon. (maybe HTML6 or CSS4?).&lt;/p&gt;</content>
+		<summary>&lt;p&gt;LaTeX is a great formatting language. For those of you who don't know it, it's a formatting language which is used for many technical papers and textbooks. It allows for typesetting mathematical equations perfectly but that's not why its so great.&lt;/p&gt;</summary>
+	</entry>
+</feed>

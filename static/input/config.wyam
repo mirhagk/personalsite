@@ -1,0 +1,10 @@
+Settings.Host = "nathanjervis.com";
+GlobalMetadata["Title"] = "Nathan Jervis";
+GlobalMetadata["Description"] = "Nathan Jervis' Blog";
+GlobalMetadata["Intro"] = "Hi, welcome to my blog!";
+
+Pipelines.Add("Home",
+	ReadFiles("{!_,}*.md"),
+	Markdown(),
+	WriteFiles(".html")
+);
